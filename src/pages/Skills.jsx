@@ -117,7 +117,6 @@ export default function Skills() {
             border="1px solid"
             borderColor="whiteAlpha.100"
             whileHover={{
-              y: -10,
               borderColor: skill.color,
               boxShadow: `0 0 20px ${skill.color}40`,
             }}

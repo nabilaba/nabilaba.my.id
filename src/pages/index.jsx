@@ -2,7 +2,6 @@ import {
   ChakraProvider,
   Box,
   Flex,
-  Heading,
   Link,
   VStack,
   HStack,
@@ -55,7 +54,8 @@ const Navbar = () => {
         maxW="container.xl"
         mx="auto"
       >
-        <Heading
+        <Link
+          href="#"
           size="md"
           bgGradient="linear(to-r, cyan.400, purple.500)"
           bgClip="text"
@@ -64,7 +64,7 @@ const Navbar = () => {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           NABIL ABA
-        </Heading>
+        </Link>
 
         <HStack
           spacing={6}

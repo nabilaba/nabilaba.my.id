@@ -64,8 +64,7 @@ export default function IntellectualProperty() {
         justifyContent="center"
         gap={3}
       >
-        <Icon as={FaCertificate} />
-        INTELLECTUAL PROPERTY (IPR)
+        INTELLECTUAL PROPERTY
       </Heading>
 
       <VStack spacing={6} align="stretch">

@@ -1,5 +1,6 @@
 import { Box, Container, Heading, Text, Flex, Icon, Link } from "@chakra-ui/react";
 import { FaEnvelope, FaGithub } from "react-icons/fa";
+import { SiLinkedin } from "react-icons/si";
 
 export default function Footer() {
   return (
@@ -32,6 +33,14 @@ export default function Footer() {
               as={FaGithub}
               boxSize={8}
               _hover={{ color: "purple.400" }}
+              transition="color 0.2s"
+            />
+          </Link>
+          <Link href="https://www.linkedin.com/in/nabilaba/" isExternal>
+            <Icon
+              as={SiLinkedin}
+              boxSize={8}
+              _hover={{ color: "blue.400" }}
               transition="color 0.2s"
             />
           </Link>

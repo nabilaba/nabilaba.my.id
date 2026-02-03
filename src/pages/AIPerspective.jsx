@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Heading, Text, HStack, Tag, Icon } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, Text, HStack, Tag, Icon, Wrap } from "@chakra-ui/react";
 import { FaStackOverflow, FaBrain, FaRobot } from "react-icons/fa";
 import { SiGeeksforgeeks } from "react-icons/si";
 import { motion } from "framer-motion";
@@ -61,7 +61,7 @@ export default function AIPerspective() {
               StackOverflow, and platforms like GeeksForGeeks to architect
               robust solutions.
             </Text>
-            <HStack spacing={4}>
+            <Wrap spacing={4}>
               <Tag size="lg" colorScheme="orange" borderRadius="full">
                 <Icon as={FaStackOverflow} mr={2} /> StackOverflow
               </Tag>
@@ -71,7 +71,7 @@ export default function AIPerspective() {
               <Tag size="lg" colorScheme="purple" borderRadius="full">
                 <Icon as={FaBrain} mr={2} /> Critical Thinking
               </Tag>
-            </HStack>
+            </Wrap>
           </Box>
           <Box display={{ base: "none", md: "block" }}>
             <Icon as={FaRobot} w={40} h={40} color="whiteAlpha.100" />
