@@ -13,7 +13,6 @@ jobs:
   build-frontend:
     name: Build Frontend
     runs-on: ubuntu-latest
-
     steps:
       - name: Get latest code
         uses: actions/checkout@v4
@@ -25,70 +24,27 @@ jobs:
 
       - name: Cache Yarn
         uses: actions/cache@v4
-        id: yarn-cache
         with:
-          path: |
-            **/node_modules
-            **/.eslintcache
-            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          path: "**/node_modules"
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Install Dependencies
-        run: yarn install
-        working-directory: frontend
-
-      - name: Build Frontend
-        run: yarn build
-        working-directory: frontend
+      - name: Install & Build
+        run: |
+          yarn install
+          yarn build
 
       - name: Upload Frontend Build Files
         uses: actions/upload-artifact@v4
         with:
           name: frontend-production-files
-          path: ./frontend/dist
-          include-hidden-files: true
-
-  build-backend:
-    name: Save Backend
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Get latest code
-        uses: actions/checkout@v4
-
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 22.x
-
-      - name: Cache Yarn
-        uses: actions/cache@v4
-        id: yarn-cache
-        with:
-          path: |
-            **/node_modules
-            **/.eslintcache
-            ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Install Dependencies
-        run: yarn install
-        working-directory: backend
-
-      - name: Upload Backend Files
-        uses: actions/upload-artifact@v4
-        with:
-          name: backend-production-files
-          path: ./backend
+          path: dist
           include-hidden-files: true
 
   deploy:
-    name: Deploy Frontend and Backend
-    needs: [build-frontend, build-backend]
+    name: Deploy Frontend
+    needs: [build-frontend]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
@@ -97,12 +53,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: frontend-production-files
-          path: ./dist
-
-      - name: Download Backend Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: backend-production-files
           path: ./
 
       - name: Deploy all files to FTP
