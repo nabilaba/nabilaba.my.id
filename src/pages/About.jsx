@@ -28,8 +28,8 @@ export default function About() {
             WHO AM I?
           </Heading>
           <Text fontSize="lg" color="gray.300" mb={4}>
-            I am <b>Nabil Aziz Bima Anggita</b>, currently pursuing a degree in{" "}
-            <b>Informatika</b> at <b>Surakarta</b>.
+            I am <b>Nabil Aziz Bima Anggita</b>, a graduate in{" "}
+            <b>Informatika</b> from <b>Universitas Muhammadiyah Surakarta</b>.
           </Text>
           <Text fontSize="lg" color="gray.300" mb={4}>
             I have a deep interest in <b>Fullstack Engineering</b>, Android OS

@@ -33,7 +33,7 @@ export default function Projects() {
         title: "Binar Car Rental",
         desc: "Full-stack car rental application featuring secure auth, payments, and admin dashboard.",
         tech: ["React", "Bootstrap"],
-        link: "#",
+        link: "https://github.com/nabilaba/binar-car-rental-react",
         demo: "#",
       },
       {
@@ -51,28 +51,28 @@ export default function Projects() {
         demo: "#",
       },
       {
-        title: "FE - Lagu",
-        desc: "Frontend implementation for music player interface.",
+        title: "The Hike",
+        desc: "Interactive hiking trail exploration website.",
         tech: ["React", "UI"],
+        link: "https://github.com/nabilaba/landingpage-thehike",
+        demo: "#",
+      },
+      {
+        title: "PPDB SMA Muhammadiyah",
+        desc: "Portal Penerimaan Peserta Didik Baru Online untuk SMA Muhammadiyah Al-Kautsar PK.",
+        tech: ["React", "Web", "System"],
         link: "#",
         demo: "#",
       },
       {
-        title: "The Hike",
-        desc: "Interactive hiking trail exploration website.",
-        tech: ["React", "Maps"],
-        link: "#",
+        title: "Voice Library",
+        desc: "AI-powered anime voice library with React and Chakra UI.",
+        tech: ["React", "AI", "Chakra UI"],
+        link: "https://github.com/nabil-aba/voice-library",
         demo: "#",
       },
     ],
     PHP: [
-      {
-        title: "PPDB SMA Muhammadiyah",
-        desc: "Portal Penerimaan Peserta Didik Baru Online untuk SMA Muhammadiyah Al-Kautsar PK.",
-        tech: ["Web", "System", "PHP"],
-        link: "#",
-        demo: "#",
-      },
       {
         title: "HelloSchool",
         desc: "Academic management system for school administration and student grading.",
@@ -93,21 +93,77 @@ export default function Projects() {
         title: "Snake Game Advanced",
         desc: "Classic game rebuilt with pure JavaScript DOM manipulation. Features custom difficulty levels.",
         tech: ["JS", "DOM", "HTML"],
-        link: "#",
+        link: "https://github.com/nabilaba/Snake-Game-Advanced",
         demo: "#",
       },
       {
         title: "N-Grader",
         desc: "Automated grading tool designed to streamline the evaluation process for assignments.",
-        tech: ["Python", "Automation"],
-        link: "#",
+        tech: ["Batch", "Automation"],
+        link: "https://github.com/nabilaba/N-Grader",
         demo: "#",
       },
       {
         title: "Mobile App Dev Test",
         desc: "Mobile application development test projects and components.",
-        tech: ["Android", "Java/Kotlin"],
-        link: "#",
+        tech: ["Android", "Java"],
+        link: "https://github.com/nabilaba/Mobile-App-Development-Test",
+        demo: "#",
+      },
+      {
+        title: "Abzenzi",
+        desc: "Absensi berbasis aplikasi Android, memudahkan pencatatan kehadiran secara digital.",
+        tech: ["Android", "Java"],
+        link: "https://github.com/nabilaba/Abzenzi",
+        demo: "#",
+      },
+      {
+        title: "WhatsApp Bot",
+        desc: "WhatsApp bot with various automated features and command handling.",
+        tech: ["JS", "Node.js", "Bot"],
+        link: "https://github.com/nabilaba/whatsapp-bot",
+        demo: "#",
+      },
+      {
+        title: "Remove Background",
+        desc: "Web tool to remove image backgrounds automatically using AI.",
+        tech: ["JS", "AI", "Web"],
+        link: "https://github.com/nabilaba/remove-background",
+        demo: "#",
+      },
+      {
+        title: "Nabil WYSIWYG",
+        desc: "Custom WYSIWYG rich text editor built with JavaScript.",
+        tech: ["JS", "Editor"],
+        link: "https://github.com/nabilaba/NabilWysiwyg",
+        demo: "#",
+      },
+      {
+        title: "Anime Puzzle",
+        desc: "Anime-themed puzzle game as a Progressive Web App (PWA), playable on any device.",
+        tech: ["React", "PWA", "Game"],
+        link: "https://github.com/nabil-aba/game/tree/main/anime-puzzle",
+        demo: "#",
+      },
+      {
+        title: "Anime Listening Test",
+        desc: "Interactive web game to test your knowledge of anime opening/ending songs.",
+        tech: ["JS", "Game", "Anime"],
+        link: "https://github.com/nabil-aba/game/tree/main/anime-listening-test",
+        demo: "#",
+      },
+      {
+        title: "Nabil Hero",
+        desc: "Anime-style hero platformer web game with multiple levels and audio.",
+        tech: ["JS", "Game", "Anime"],
+        link: "https://github.com/nabil-aba/game/tree/main/nabil-hero",
+        demo: "#",
+      },
+      {
+        title: "Happy Birthday Template",
+        desc: "Koleksi template halaman web ucapan ulang tahun yang interaktif, animatif, dan mudah dikustomisasi.",
+        tech: ["HTML", "JS", "Template"],
+        link: "https://github.com/nabil-aba/hbd",
         demo: "#",
       },
     ],
@@ -211,7 +267,6 @@ export default function Projects() {
               }}
               transition="all 0.2s"
             >
-              {/* macOS Dots */}
               <HStack spacing={2} mb={4} zIndex={1}>
                 <Circle size="10px" bg="#FF5F56" />
                 <Circle size="10px" bg="#FFBD2E" />
@@ -306,7 +361,7 @@ export default function Projects() {
                       transform: "translate(-2px, -2px)",
                       boxShadow: "4px 4px 0px black",
                       bg: "pink.500",
-                      color: "white"
+                      color: "white",
                     }}
                     _active={{
                       transform: "translate(0px, 0px)",

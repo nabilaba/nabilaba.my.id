@@ -49,7 +49,7 @@ export default function Hero() {
           px={4}
         >
           Aka <b>Nabil Aba</b>. A "Newbie Permanen" crafting digital experiences
-          from Indonesia. Student at UMS, transforming code into energetic
+          from Indonesia. Graduate from UMS, transforming code into energetic
           solutions.
         </Text>
         <Flex
