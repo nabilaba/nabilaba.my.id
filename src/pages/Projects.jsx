@@ -27,35 +27,35 @@ export default function Projects() {
         desc: "Platform pencarian mentor ngoding pribadi. Menghubungkan pembelajar dengan ahli.",
         tech: ["React", "JS"],
         link: "https://github.com/nabilaba/pusatngoding",
-        demo: "#",
+        demo: "https://pusatngoding.netlify.app/",
       },
       {
         title: "Binar Car Rental",
         desc: "Full-stack car rental application featuring secure auth, payments, and admin dashboard.",
         tech: ["React", "Bootstrap"],
         link: "https://github.com/nabilaba/binar-car-rental-react",
-        demo: "#",
+        demo: "https://bcr-react.vercel.app",
       },
       {
         title: "Parentheses Validation",
         desc: "Algorithm implementation using React to validate mathematical parentheses structure.",
         tech: ["React", "Algorithm"],
         link: "https://github.com/nabilaba/Parentheses-Validation",
-        demo: "#",
+        demo: "https://parentheses-validation.netlify.app",
       },
       {
         title: "Quiz With Trivia",
         desc: "Website kuis interaktif yang mengambil database soal dari Trivia API.",
         tech: ["React", "API"],
         link: "https://github.com/nabilaba/Quiz-With-Trivia",
-        demo: "#",
+        demo: "https://qwt.netlify.app",
       },
       {
         title: "The Hike",
         desc: "Interactive hiking trail exploration website.",
         tech: ["React", "UI"],
         link: "https://github.com/nabilaba/landingpage-thehike",
-        demo: "#",
+        demo: "https://the-hike.netlify.app",
       },
       {
         title: "PPDB SMA Muhammadiyah",
@@ -70,6 +70,13 @@ export default function Projects() {
         tech: ["React", "AI", "Chakra UI"],
         link: "https://github.com/nabil-aba/voice-library",
         demo: "#",
+      },
+      {
+        title: "Catatan",
+        desc: "Aplikasi catatan berbasis web dengan fitur CRUD, penyimpanan lokal, dan UI sederhana.",
+        tech: ["React", "LocalStorage"],
+        link: "https://github.com/nabilaba/catatan",
+        demo: "https://aplikasicatatan.netlify.app",
       },
     ],
     PHP: [
@@ -94,7 +101,7 @@ export default function Projects() {
         desc: "Classic game rebuilt with pure JavaScript DOM manipulation. Features custom difficulty levels.",
         tech: ["JS", "DOM", "HTML"],
         link: "https://github.com/nabilaba/Snake-Game-Advanced",
-        demo: "#",
+        demo: "https://snake-game-advanced.netlify.app",
       },
       {
         title: "N-Grader",
@@ -133,8 +140,8 @@ export default function Projects() {
       },
       {
         title: "Nabil WYSIWYG",
-        desc: "Custom WYSIWYG rich text editor built with JavaScript.",
-        tech: ["JS", "Editor"],
+        desc: "Custom WYSIWYG rich text editor built with JavaScript for React + Chakra UI.",
+        tech: ["JS", "Editor", "NPM"],
         link: "https://github.com/nabilaba/NabilWysiwyg",
         demo: "#",
       },
@@ -257,12 +264,12 @@ export default function Projects() {
                 transform: "translate(-50%, 0)",
                 width: "150%",
                 height: "100%",
-                bgGradient: "radial(rgba(139, 92, 246, 0.15) 0%, transparent 60%)",
+                bgGradient:
+                  "radial(rgba(139, 92, 246, 0.15) 0%, transparent 60%)",
                 zIndex: 0,
                 pointerEvents: "none",
               }}
               _hover={{
-                transform: "translate(-2px, -2px)",
                 boxShadow: "8px 8px 0px black",
               }}
               transition="all 0.2s"
@@ -301,7 +308,13 @@ export default function Projects() {
               )}
 
               {project.role && (
-                <Text fontSize="xs" color="pink.300" mb={4} fontWeight="bold" zIndex={1}>
+                <Text
+                  fontSize="xs"
+                  color="pink.300"
+                  mb={4}
+                  fontWeight="bold"
+                  zIndex={1}
+                >
                   Role: {project.role}
                 </Text>
               )}
@@ -332,9 +345,12 @@ export default function Projects() {
                   leftIcon={project.location ? undefined : <FaGithub />}
                   border="2px solid black"
                   boxShadow="2px 2px 0px black"
+                  isDisabled={project.link === "#"}
                   _hover={{
-                    transform: "translate(-2px, -2px)",
-                    boxShadow: "4px 4px 0px black",
+                    boxShadow:
+                      project.link === "#"
+                        ? "2px 2px 0px black"
+                        : "4px 4px 0px black",
                   }}
                   _active={{
                     transform: "translate(0px, 0px)",
@@ -354,14 +370,17 @@ export default function Projects() {
                     variant="outline"
                     colorScheme="pink"
                     leftIcon={<FaGlobe />}
+                    isDisabled={project.demo === "#"}
                     border="2px solid"
-                    borderColor="pink.500"
+                    borderColor={project.demo === "#" ? "gray.600" : "pink.500"}
                     boxShadow="2px 2px 0px black"
                     _hover={{
-                      transform: "translate(-2px, -2px)",
-                      boxShadow: "4px 4px 0px black",
-                      bg: "pink.500",
-                      color: "white",
+                      boxShadow:
+                        project.demo === "#"
+                          ? "2px 2px 0px black"
+                          : "4px 4px 0px black",
+                      bg: project.demo === "#" ? "transparent" : "pink.500",
+                      color: project.demo === "#" ? "gray.500" : "white",
                     }}
                     _active={{
                       transform: "translate(0px, 0px)",
