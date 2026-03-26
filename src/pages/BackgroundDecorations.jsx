@@ -1,43 +1,104 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, keyframes } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
 const MotionText = motion(Text);
 
-const AnimatedWavyDashedLine = ({ top, duration, color }) => {
-  const dashArrayValue = "15 30";
-  const totalDashLength = 45;
+const dashMove = keyframes`
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -45; }
+`;
+
+const gridMove = keyframes`
+  from { transform: translateY(0px); }
+  to { transform: translateY(50px); }
+`;
+
+const WavyLine = ({ top, duration, color }) => (
+  <Box
+    position="absolute"
+    top={top}
+    left={0}
+    right={0}
+    height="100px"
+    zIndex="-1"
+    overflow="hidden"
+    style={{ transform: "translateZ(0)" }}
+  >
+    <Box
+      as="svg"
+      width="100%"
+      height="100%"
+      viewBox="0 0 1000 100"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M-5,50 C150,0 350,100 500,50 C650,0 850,100 1005,50"
+        stroke={color}
+        strokeWidth="3"
+        fill="none"
+        strokeDasharray="15 30"
+        style={{
+          animation: `${dashMove} ${duration}s linear infinite`,
+        }}
+      />
+    </Box>
+  </Box>
+);
+
+const GridBackground = () => {
+  const cols = Array.from({ length: 22 }, (_, i) => i * 50);
+  const rows = Array.from({ length: 16 }, (_, i) => i * 50);
 
   return (
     <Box
       position="absolute"
-      top={top}
-      left={0}
-      right={0}
-      height="100px"
-      zIndex="-1"
+      bottom="-20%"
+      left="-50%"
+      w="200%"
+      h="60%"
       overflow="hidden"
+      opacity="0.2"
+      style={{
+        transform: "perspective(500px) rotateX(60deg)",
+        willChange: "transform",
+      }}
     >
-      <motion.svg
-        width="100%"
-        height="100%"
-        viewBox="0 0 1000 100"
-        preserveAspectRatio="none"
+      <Box
+        as="svg"
+        position="absolute"
+        top="-100%"
+        left="0"
+        w="100%"
+        h="200%"
+        style={{
+          animation: `${gridMove} 1.5s linear infinite`,
+          willChange: "transform",
+        }}
       >
-        <motion.path
-          d="M-5,50 C150,0 350,100 500,50 C650,0 850,100 1005,50"
-          stroke={color}
-          strokeWidth="3"
-          fill="none"
-          strokeDasharray={dashArrayValue}
-          animate={{ strokeDashoffset: [0, -totalDashLength] }}
-          transition={{
-            duration: duration,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-      </motion.svg>
+        {cols.map((x) => (
+          <line
+            key={`c-${x}`}
+            x1={`${x}`}
+            y1="0"
+            x2={`${x}`}
+            y2="100%"
+            stroke="rgba(79,209,197,0.5)"
+            strokeWidth="1"
+          />
+        ))}
+        {rows.map((y) => (
+          <line
+            key={`r-${y}`}
+            x1="0"
+            y1={`${y}`}
+            x2="100%"
+            y2={`${y}`}
+            stroke="rgba(79,209,197,0.5)"
+            strokeWidth="1"
+          />
+        ))}
+      </Box>
     </Box>
   );
 };
@@ -61,48 +122,23 @@ export default function BackgroundDecorations() {
       position="fixed"
       top="0"
       left="0"
-      right="10px"
+      right="0"
       bottom="0"
       zIndex="-2"
       overflow="hidden"
       pointerEvents="none"
       bg="#0a0a12"
-      minH="100dvh"
-      w="100%"
+      style={{
+        transform: "translateZ(0)",
+        willChange: "transform",
+        height: "100%",
+        width: "100%",
+        contain: "strict",
+      }}
     >
-      <MotionBox
-        position="absolute"
-        bottom="-20%"
-        left="-50%"
-        w="200%"
-        h="60%"
-        bgGradient="linear(to-t, purple.900, transparent)"
-        opacity="0.2"
-        transform="perspective(500px) rotateX(60deg)"
-        css={{
-          backgroundImage:
-            "linear-gradient(rgba(79, 209, 197, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(79, 209, 197, 0.5) 1px, transparent 1px)",
-          backgroundSize: "50px 50px",
-        }}
-        animate={{
-          backgroundPosition: ["0px 0px", "0px 50px"],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      />
-      <AnimatedWavyDashedLine
-        top="20%"
-        duration={10}
-        color="rgba(213, 63, 140, 0.5)"
-      />
-      <AnimatedWavyDashedLine
-        top="60%"
-        duration={15}
-        color="rgba(183, 63, 213, 0.5)"
-      />
+      <GridBackground />
+      <WavyLine top="20%" duration={10} color="rgba(213, 63, 140, 0.5)" />
+      <WavyLine top="60%" duration={15} color="rgba(183, 63, 213, 0.5)" />
       {jpChars.map((item, i) => (
         <MotionText
           key={i}
@@ -113,6 +149,7 @@ export default function BackgroundDecorations() {
           fontWeight="bold"
           color="whiteAlpha.100"
           fontFamily="'Noto Sans JP', sans-serif"
+          style={{ transform: "translateZ(0)" }}
           animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 5, delay: item.delay, repeat: Infinity }}
         >
@@ -131,10 +168,8 @@ export default function BackgroundDecorations() {
           borderColor={shape.color}
           boxShadow={`0 0 20px ${shape.color}`}
           borderRadius={shape.type === "donut" ? "full" : "lg"}
-          animate={{
-            rotate: 360,
-            y: [0, 30, 0],
-          }}
+          style={{ transform: "translateZ(0)" }}
+          animate={{ rotate: 360, y: [0, 30, 0] }}
           transition={{
             rotate: { duration: 10 + i * 2, repeat: Infinity, ease: "linear" },
             y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
