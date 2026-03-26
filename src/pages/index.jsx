@@ -175,7 +175,7 @@ const Navbar = () => {
 
 function App() {
   return (
-    <>
+    <Box minH="100dvh">
       <BackgroundDecorations />
       <Navbar />
       <main>
@@ -190,7 +190,7 @@ function App() {
         <AIPerspective />
       </main>
       <Footer />
-    </>
+    </Box>
   );
 }
 
