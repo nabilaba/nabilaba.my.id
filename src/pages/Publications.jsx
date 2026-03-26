@@ -38,11 +38,6 @@ export default function Publications() {
             borderRadius="xl"
             border="1px solid"
             borderColor="whiteAlpha.100"
-            whileHover={{
-              y: -5,
-              borderColor: "purple.400",
-              bg: "whiteAlpha.100",
-            }}
           >
             <Flex justify="space-between" align="start" mb={4}>
               <Icon as={FaBook} color="purple.400" boxSize={6} />

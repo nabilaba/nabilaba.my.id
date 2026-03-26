@@ -65,7 +65,6 @@ export default function Hero() {
             colorScheme="purple"
             borderRadius="full"
             px={8}
-            _hover={{ transform: "scale(1.05)" }}
           >
             {t.hero.viewWork}
           </Button>

@@ -118,10 +118,6 @@ export default function Skills() {
             textAlign="center"
             border="1px solid"
             borderColor="whiteAlpha.100"
-            whileHover={{
-              borderColor: skill.color,
-              boxShadow: `0 0 20px ${skill.color}40`,
-            }}
             transition={{ duration: 0.3 }}
           >
             <Icon as={skill.icon} boxSize={12} color={skill.color} mb={4} />

@@ -50,7 +50,6 @@ export default function IntellectualProperty() {
             border="1px solid"
             borderColor="orange.500"
             boxShadow="0 0 20px rgba(237, 137, 54, 0.1)"
-            whileHover={{ scale: 1.01, borderColor: "orange.400" }}
           >
             <Flex
               direction={{ base: "column", md: "row" }}

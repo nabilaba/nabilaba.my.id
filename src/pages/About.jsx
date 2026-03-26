@@ -53,7 +53,6 @@ export default function About() {
           borderRadius="2xl"
           border="1px dashed"
           borderColor="whiteAlpha.300"
-          whileHover={{ rotate: 2, scale: 1.02 }}
           w="full"
         >
           <VStack align="start" spacing={4}>

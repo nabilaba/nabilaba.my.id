@@ -89,7 +89,6 @@ export default function Experiences() {
               borderRadius="xl"
               border="1px solid"
               borderColor={exp.highlight ? "cyan.500" : "whiteAlpha.200"}
-              whileHover={{ scale: 1.02, borderColor: "cyan.400" }}
               position="relative"
               _before={{
                 content: '""',
