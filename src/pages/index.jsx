@@ -1,11 +1,15 @@
 import {
-  ChakraProvider,
   Box,
   Flex,
   Link,
   VStack,
   HStack,
   IconButton,
+  Button,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
   useDisclosure,
   Drawer,
   DrawerBody,
@@ -13,9 +17,8 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from "@chakra-ui/react";
-import { HamburgerIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import Hero from "./Hero";
-import theme from "./theme";
 import Publications from "./Publications";
 import AIPerspective from "./AIPerspective";
 import About from "./About";
@@ -25,17 +28,63 @@ import Skills from "./Skills";
 import IntellectualProperty from "./IntellectualProperty";
 import Experiences from "./Experiences";
 import BackgroundDecorations from "./BackgroundDecorations";
+import { useLang } from "../context/LanguageContext";
+import { LANGUAGES } from "../locales";
+
+const LanguageSwitcher = () => {
+  const { lang, changeLang } = useLang();
+  const current = LANGUAGES.find((l) => l.code === lang);
+
+  return (
+    <Menu>
+      <MenuButton
+        as={Button}
+        size="xs"
+        variant="outline"
+        colorScheme="cyan"
+        borderRadius="full"
+        px={3}
+        fontWeight="bold"
+        rightIcon={<ChevronDownIcon />}
+        _hover={{ bg: "cyan.400", color: "black" }}
+      >
+        {current.flag} {current.label}
+      </MenuButton>
+      <MenuList
+        bg="#0a0a12"
+        border="1px solid"
+        borderColor="whiteAlpha.300"
+        minW="130px"
+      >
+        {LANGUAGES.map((l) => (
+          <MenuItem
+            key={l.code}
+            onClick={() => changeLang(l.code)}
+            bg="transparent"
+            _hover={{ bg: "whiteAlpha.200" }}
+            fontWeight={lang === l.code ? "bold" : "normal"}
+            color={lang === l.code ? "cyan.400" : "white"}
+          >
+            {l.flag} {l.label}
+          </MenuItem>
+        ))}
+      </MenuList>
+    </Menu>
+  );
+};
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { t } = useLang();
+
   const navLinks = [
-    "About",
-    "Experience",
-    "Publications",
-    "IPR",
-    "Skills",
-    "Projects",
-    "Contact",
+    { label: t.navbar.about, anchor: "about" },
+    { label: t.navbar.experience, anchor: "experience" },
+    { label: t.navbar.publications, anchor: "publications" },
+    { label: t.navbar.ipr, anchor: "ipr" },
+    { label: t.navbar.skills, anchor: "skills" },
+    { label: t.navbar.projects, anchor: "projects" },
+    { label: t.navbar.contact, anchor: "contact" },
   ];
 
   return (
@@ -56,7 +105,6 @@ const Navbar = () => {
       >
         <Link
           href="#"
-          size="md"
           bgGradient="linear(to-r, cyan.400, purple.500)"
           bgClip="text"
           fontWeight="extrabold"
@@ -74,24 +122,27 @@ const Navbar = () => {
         >
           {navLinks.map((item) => (
             <Link
-              key={item}
-              href={`#${item.toLowerCase()}`}
+              key={item.anchor}
+              href={`#${item.anchor}`}
               _hover={{ color: "cyan.400", textDecoration: "none" }}
             >
-              {item.toUpperCase()}
+              {item.label.toUpperCase()}
             </Link>
           ))}
+          <LanguageSwitcher />
         </HStack>
 
-        <IconButton
-          icon={<HamburgerIcon />}
-          aria-label="Open Menu"
-          display={{ md: "none" }}
-          onClick={onOpen}
-          variant="ghost"
-          color="white"
-          _hover={{ bg: "whiteAlpha.300" }}
-        />
+        <HStack display={{ md: "none" }} spacing={2}>
+          <LanguageSwitcher />
+          <IconButton
+            icon={<HamburgerIcon />}
+            aria-label="Open Menu"
+            onClick={onOpen}
+            variant="ghost"
+            color="white"
+            _hover={{ bg: "whiteAlpha.300" }}
+          />
+        </HStack>
       </Flex>
 
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
@@ -102,14 +153,14 @@ const Navbar = () => {
             <VStack spacing={8} align="center">
               {navLinks.map((item) => (
                 <Link
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+                  key={item.anchor}
+                  href={`#${item.anchor}`}
                   onClick={onClose}
                   fontSize="xl"
                   fontWeight="bold"
                   _hover={{ color: "cyan.400", textDecoration: "none" }}
                 >
-                  {item.toUpperCase()}
+                  {item.label.toUpperCase()}
                 </Link>
               ))}
             </VStack>
@@ -122,7 +173,7 @@ const Navbar = () => {
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
+    <>
       <BackgroundDecorations />
       <Navbar />
       <main>
@@ -136,7 +187,7 @@ function App() {
         <AIPerspective />
       </main>
       <Footer />
-    </ChakraProvider>
+    </>
   );
 }
 

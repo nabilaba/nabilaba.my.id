@@ -1,11 +1,29 @@
-import { Box, Container, Flex, Heading, Text, HStack, Tag, Icon, Wrap } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  Text,
+  Icon,
+  Wrap,
+  Tag,
+} from "@chakra-ui/react";
 import { FaStackOverflow, FaBrain, FaRobot } from "react-icons/fa";
 import { SiGeeksforgeeks } from "react-icons/si";
 import { motion } from "framer-motion";
+import { useLang } from "../context/LanguageContext";
 
 const MotionBox = motion(Box);
 
 export default function AIPerspective() {
+  const { t } = useLang();
+
+  const p1Parts = t.aiPerspective.p1.split("<cyan>");
+  const p1Before = p1Parts[0];
+  const p1Rest = p1Parts[1]?.split("</cyan>");
+  const p1Highlight = p1Rest?.[0];
+  const p1After = p1Rest?.[1];
+
   return (
     <Container maxW="container.lg" py={20}>
       <MotionBox
@@ -44,32 +62,30 @@ export default function AIPerspective() {
               bgGradient="linear(to-r, cyan.400, white)"
               bgClip="text"
             >
-              My Perspective on AI
+              {t.aiPerspective.title}
             </Heading>
             <Text color="gray.300" fontSize="lg" mb={4} lineHeight="tall">
-              I view Artificial Intelligence not as a replacement, but as a{" "}
+              {p1Before}
               <Text as="span" color="cyan.400" fontWeight="bold">
-                powerful accelerator
+                {p1Highlight}
               </Text>
-              . It helps me build faster, debug smarter, and explore new
-              possibilities.
+              {p1After}
             </Text>
             <Text color="gray.400" mb={6}>
-              However, when AI hits a wall (and it often does), that's where
-              true engineering begins. I rely on fundamental problem-solving
-              skills, deep-diving into documentation, communities like
-              StackOverflow, and platforms like GeeksForGeeks to architect
-              robust solutions.
+              {t.aiPerspective.p2}
             </Text>
             <Wrap spacing={4}>
               <Tag size="lg" colorScheme="orange" borderRadius="full">
-                <Icon as={FaStackOverflow} mr={2} /> StackOverflow
+                <Icon as={FaStackOverflow} mr={2} />{" "}
+                {t.aiPerspective.tags.stackoverflow}
               </Tag>
               <Tag size="lg" colorScheme="green" borderRadius="full">
-                <Icon as={SiGeeksforgeeks} mr={2} /> GeeksForGeeks
+                <Icon as={SiGeeksforgeeks} mr={2} />{" "}
+                {t.aiPerspective.tags.geeksforgeeks}
               </Tag>
               <Tag size="lg" colorScheme="purple" borderRadius="full">
-                <Icon as={FaBrain} mr={2} /> Critical Thinking
+                <Icon as={FaBrain} mr={2} />{" "}
+                {t.aiPerspective.tags.criticalThinking}
               </Tag>
             </Wrap>
           </Box>
@@ -80,4 +96,4 @@ export default function AIPerspective() {
       </MotionBox>
     </Container>
   );
-};
+}

@@ -1,0 +1,351 @@
+const en = {
+  meta: {
+    code: "en",
+    label: "English",
+    flag: "🇬🇧",
+  },
+  navbar: {
+    about: "About",
+    experience: "Experience",
+    publications: "Publications",
+    ipr: "IPR",
+    skills: "Skills",
+    projects: "Projects",
+    contact: "Contact",
+  },
+  hero: {
+    tagline: "FULLSTACK ENTHUSIAST",
+    bio: 'Aka <b>Nabil Aba</b>. A "Newbie Permanen" crafting digital experiences from Indonesia. Graduate from UMS, transforming code into energetic solutions.',
+    viewWork: "View My Work",
+  },
+  about: {
+    title: "WHO AM I?",
+    p1: "I am <b>Nabil Aziz Bima Anggita</b>, a graduate in <b>Informatics</b> from <b>Universitas Muhammadiyah Surakarta</b>.",
+    p2: "I have a deep interest in <b>Fullstack Engineering</b>, Android OS modification, and shell scripting.",
+    p3: "I love exploring the intersection of logic and creativity through code.",
+    stats: "Stats",
+    repos: "Repositories on Github",
+    androidWeb: "Android & Web Developer",
+    chakra: "Chakra UI Specialist",
+  },
+  experiences: {
+    title: "PROFESSIONAL JOURNEY",
+    items: [
+      {
+        company: "GiNaSTel",
+        role: "Staff Accounting",
+        date: "Jun 2023 - Jul 2023",
+        description:
+          "Managed daily financial records and operational revenue calculations for 30+ product outlets. Ensured accuracy in sorting and packaging logistics for large-scale orders.",
+        type: "Work",
+        achievements: [],
+      },
+      {
+        company: "SYNRGY Academy (BCA)",
+        role: "Full-Stack Web Development",
+        date: "Aug 2022 - Feb 2023",
+        description:
+          "Mastered the MERN stack (MongoDB, Express, React, Node.js). Built scalable frontend and backend websites capable of standalone deployment. Practice next.js and PostgreSQL.",
+        type: "Bootcamp",
+        achievements: [],
+      },
+      {
+        company: "Kementerian Kominfo",
+        role: "Cyber Security Analyst",
+        date: "Aug 2022 - Dec 2022",
+        description:
+          "Selected as the 50 Best Apprentices. Collaborated on weekly cyber threat analysis articles and built a dedicated platform to publish group research results.",
+        type: "Internship",
+        highlight: true,
+        achievements: ["🏆 Selected as 50 Best Apprentices"],
+      },
+      {
+        company: "Ruangguru x Kampus Merdeka",
+        role: "Frontend Engineering",
+        date: "Feb 2022 - Jun 2022",
+        description:
+          "Top 5 Finalist (out of 80 groups). Led the final assignment team, built interactive web apps using ReactJS, and developed game logic with pure JavaScript/DOM.",
+        type: "Bootcamp",
+        highlight: true,
+        achievements: [
+          "🏆 Top 5 Finalist",
+          "📜 Final GPA: 4.00 (Perfect Score)",
+        ],
+      },
+    ],
+  },
+  publications: {
+    title: "PUBLICATIONS",
+    readPaper: "Read Paper",
+    items: [
+      {
+        title:
+          "Digitalisasi Sosialisasi Kegiatan Pada Ranting Muhammadiyah Desa Ngemplak...",
+        journal: "BUDIMAS: Jurnal Pengabdian Masyarakat",
+        year: "2024",
+        authors: "I.C. Utomo, D. Priyawati, Nabil Aziz Bima Anggita",
+        link: "https://jurnal.stie-aas.ac.id/index.php/budimas/article/view/...",
+        description:
+          "Developing an information system to digitalize socialization activities for the Muhammadiyah branch in Ngemplak village.",
+      },
+      {
+        title: "Implementasi MERN Stack pada Pengembangan Sistem",
+        journal: "Jurnal Swabumi (Vol 11, No 2)",
+        year: "2023",
+        authors: "Nabil Aziz Bima Anggita, et al.",
+        link: "https://ejournal.bsi.ac.id/jurnal/index.php/swabumi/article/view/15965/0",
+        description:
+          "Published research detailing the implementation of MongoDB, Express, React, and Node.js in modern web system development.",
+      },
+      {
+        title: "Sistem Penerimaan Peserta Didik Baru (PPDB) Online",
+        journal: "Eprints UMS",
+        year: "2023",
+        authors: "Nabil Aziz Bima Anggita",
+        link: "https://eprints.ums.ac.id/110545/",
+        description:
+          "Research and development of a web-based admission system for SMA Muhammadiyah Al-Kautsar PK, streamlining the registration process.",
+      },
+    ],
+  },
+  skills: {
+    title: "TECH ARSENAL",
+  },
+  projects: {
+    title: "SELECTED WORKS",
+    viewMaterial: "View Material",
+    repository: "Repository",
+    liveDemo: "Live Demo",
+    role: "Role",
+    others: "Native & Others",
+    items: {
+      React: [
+        {
+          title: "Pusat Ngoding",
+          desc: "Personal coding mentor search platform. Connecting learners with experts.",
+          tech: ["React", "JS"],
+          link: "https://github.com/nabilaba/pusatngoding",
+          demo: "https://pusatngoding.netlify.app/",
+        },
+        {
+          title: "Binar Car Rental",
+          desc: "Full-stack car rental application featuring secure auth, payments, and admin dashboard.",
+          tech: ["React", "Bootstrap"],
+          link: "https://github.com/nabilaba/binar-car-rental-react",
+          demo: "https://bcr-react.vercel.app",
+        },
+        {
+          title: "Parentheses Validation",
+          desc: "Algorithm implementation using React to validate mathematical parentheses structure.",
+          tech: ["React", "Algorithm"],
+          link: "https://github.com/nabilaba/Parentheses-Validation",
+          demo: "https://parentheses-validation.netlify.app",
+        },
+        {
+          title: "Quiz With Trivia",
+          desc: "Interactive quiz website pulling questions from the Trivia API.",
+          tech: ["React", "API"],
+          link: "https://github.com/nabilaba/Quiz-With-Trivia",
+          demo: "https://qwt.netlify.app",
+        },
+        {
+          title: "The Hike",
+          desc: "Interactive hiking trail exploration website.",
+          tech: ["React", "UI"],
+          link: "https://github.com/nabilaba/landingpage-thehike",
+          demo: "https://the-hike.netlify.app",
+        },
+        {
+          title: "PPDB SMA Muhammadiyah",
+          desc: "Online Student Admission Portal for SMA Muhammadiyah Al-Kautsar PK.",
+          tech: ["React", "Web", "System"],
+          link: "#",
+          demo: "#",
+        },
+        {
+          title: "Voice Library",
+          desc: "AI-powered anime voice library with React and Chakra UI.",
+          tech: ["React", "AI", "Chakra UI"],
+          link: "https://github.com/nabil-aba/voice-library",
+          demo: "#",
+        },
+        {
+          title: "Catatan",
+          desc: "Web-based note app with CRUD features, local storage, and simple UI.",
+          tech: ["React", "LocalStorage"],
+          link: "https://github.com/nabilaba/catatan",
+          demo: "https://aplikasicatatan.netlify.app",
+        },
+      ],
+      PHP: [
+        {
+          title: "HelloSchool",
+          desc: "Academic management system for school administration and student grading.",
+          tech: ["PHP", "MySQL"],
+          link: "#",
+          demo: "#",
+        },
+        {
+          title: "Tugas Praktikum Web",
+          desc: "Collection of web programming assignments and implementations.",
+          tech: ["PHP", "HTML", "CSS"],
+          link: "#",
+          demo: "#",
+        },
+      ],
+      Others: [
+        {
+          title: "Snake Game Advanced",
+          desc: "Classic game rebuilt with pure JavaScript DOM manipulation. Features custom difficulty levels.",
+          tech: ["JS", "DOM", "HTML"],
+          link: "https://github.com/nabilaba/Snake-Game-Advanced",
+          demo: "https://snake-game-advanced.netlify.app",
+        },
+        {
+          title: "N-Grader",
+          desc: "Automated grading tool designed to streamline the evaluation process for assignments.",
+          tech: ["Batch", "Automation"],
+          link: "https://github.com/nabilaba/N-Grader",
+          demo: "#",
+        },
+        {
+          title: "Mobile App Dev Test",
+          desc: "Mobile application development test projects and components.",
+          tech: ["Android", "Java"],
+          link: "https://github.com/nabilaba/Mobile-App-Development-Test",
+          demo: "#",
+        },
+        {
+          title: "Abzenzi",
+          desc: "Android-based attendance app, making digital attendance recording easier.",
+          tech: ["Android", "Java"],
+          link: "https://github.com/nabilaba/Abzenzi",
+          demo: "#",
+        },
+        {
+          title: "WhatsApp Bot",
+          desc: "WhatsApp bot with various automated features and command handling.",
+          tech: ["JS", "Node.js", "Bot"],
+          link: "https://github.com/nabilaba/whatsapp-bot",
+          demo: "#",
+        },
+        {
+          title: "Remove Background",
+          desc: "Web tool to remove image backgrounds automatically using AI.",
+          tech: ["JS", "AI", "Web"],
+          link: "https://github.com/nabilaba/remove-background",
+          demo: "#",
+        },
+        {
+          title: "Nabil WYSIWYG",
+          desc: "Custom WYSIWYG rich text editor built with JavaScript for React + Chakra UI.",
+          tech: ["JS", "Editor", "NPM"],
+          link: "https://github.com/nabilaba/NabilWysiwyg",
+          demo: "#",
+        },
+        {
+          title: "Anime Puzzle",
+          desc: "Anime-themed puzzle game as a Progressive Web App (PWA), playable on any device.",
+          tech: ["React", "PWA", "Game"],
+          link: "https://github.com/nabil-aba/game/tree/main/anime-puzzle",
+          demo: "#",
+        },
+        {
+          title: "Anime Listening Test",
+          desc: "Interactive web game to test your knowledge of anime opening/ending songs.",
+          tech: ["JS", "Game", "Anime"],
+          link: "https://github.com/nabil-aba/game/tree/main/anime-listening-test",
+          demo: "#",
+        },
+        {
+          title: "Nabil Hero",
+          desc: "Anime-style hero platformer web game with multiple levels and audio.",
+          tech: ["JS", "Game", "Anime"],
+          link: "https://github.com/nabil-aba/game/tree/main/nabil-hero",
+          demo: "#",
+        },
+        {
+          title: "Happy Birthday Template",
+          desc: "Collection of interactive, animated birthday webpage templates, easy to customize.",
+          tech: ["HTML", "JS", "Template"],
+          link: "https://github.com/nabil-aba/hbd",
+          demo: "#",
+        },
+      ],
+      Content: [
+        {
+          title: "AI Workshop Materials",
+          desc: "Created instructional materials for 'Pemanfaatan AI' workshop. Designed slides on AI fundamentals, ethical impacts, and practical tools.",
+          tech: ["Canva", "AI Literacy"],
+          location: "SMP Birul Walidain Muhammadiyah, Sragen",
+          date: "Nov 12, 2025",
+          role: "Content Creator & Co-Facilitator",
+          link: "#",
+        },
+        {
+          title: "Graphic Design Training",
+          desc: "Developed module 'Pelatihan Desain Grafis dengan Canva'. Created visual assets and step-by-step tutorials for beginners.",
+          tech: ["Canva", "Design"],
+          location: "SMP IT, Sragen",
+          date: "Sept 25, 2024",
+          role: "Content Creator & Support",
+          link: "#",
+        },
+      ],
+    },
+  },
+  aiPerspective: {
+    title: "My Perspective on AI",
+    p1: "I view Artificial Intelligence not as a replacement, but as a <cyan>powerful accelerator</cyan>. It helps me build faster, debug smarter, and explore new possibilities.",
+    p2: "However, when AI hits a wall (and it often does), that's where true engineering begins. I rely on fundamental problem-solving skills, deep-diving into documentation, communities like StackOverflow, and platforms like GeeksForGeeks to architect robust solutions.",
+    tags: {
+      stackoverflow: "StackOverflow",
+      geeksforgeeks: "GeeksForGeeks",
+      criticalThinking: "Critical Thinking",
+    },
+  },
+  ipr: {
+    title: "INTELLECTUAL PROPERTY",
+    badgeCopyright: "HAK CIPTA (COPYRIGHT)",
+    role: "Role",
+    year: "Year",
+    lead: "Lead",
+    verify: "Verify Records on SINTA",
+    items: [
+      {
+        id: "EC002025152998",
+        title:
+          "Aplikasi Layanan Pendaftaran Kartu Anggota Muhammadiyah PCM Kebakkramat",
+        year: "2025",
+        type: "Computer Program",
+        role: "Inventor",
+        lead: "Dedi Gunawan, Ph.D.",
+      },
+      {
+        id: "EC00202423523",
+        title:
+          "Sistem Informasi Presensi Kehadiran Dan Catatan Kegiatan Harian Guru MIM Taraman Berbasis Web",
+        year: "2024",
+        type: "Computer Program",
+        role: "Inventor",
+        lead: "Dedi Gunawan, Ph.D.",
+      },
+      {
+        id: "EC00202343330",
+        title:
+          "Sistem Informasi Penerimaan Peserta Didik Baru (PPDB) SMA Muhammadiyah Al Kautsar Program Khusus Kartasura Berbasis Web",
+        year: "2023",
+        type: "Computer Program",
+        role: "Inventor",
+        lead: "Dedi Gunawan, Ph.D.",
+      },
+    ],
+  },
+  footer: {
+    heading: "Let's Build Something Amazing",
+    sub: "Open for collaboration or just a chat about technology and React.",
+    copyright: "Designed with Heart wkwkwk.",
+  },
+};
+
+export default en;

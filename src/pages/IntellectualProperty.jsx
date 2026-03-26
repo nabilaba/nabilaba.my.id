@@ -17,39 +17,12 @@ import {
   FaExternalLinkAlt,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useLang } from "../context/LanguageContext";
 
 const MotionBox = motion(Box);
 
 export default function IntellectualProperty() {
-  const iprs = [
-    {
-      id: "EC002025152998",
-      title:
-        "Aplikasi Layanan Pendaftaran Kartu Anggota Muhammadiyah PCM Kebakkramat",
-      year: "2025",
-      type: "Computer Program",
-      role: "Inventor",
-      lead: "Dedi Gunawan, Ph.D.",
-    },
-    {
-      id: "EC00202423523",
-      title:
-        "Sistem Informasi Presensi Kehadiran Dan Catatan Kegiatan Harian Guru MIM Taraman Berbasis Web",
-      year: "2024",
-      type: "Computer Program",
-      role: "Inventor",
-      lead: "Dedi Gunawan, Ph.D.",
-    },
-    {
-      id: "EC00202343330",
-      title:
-        "Sistem Informasi Penerimaan Peserta Didik Baru (PPDB) SMA Muhammadiyah Al Kautsar Program Khusus Kartasura Berbasis Web",
-      year: "2023",
-      type: "Computer Program",
-      role: "Inventor",
-      lead: "Dedi Gunawan, Ph.D.",
-    },
-  ];
+  const { t } = useLang();
 
   return (
     <Container maxW="container.lg" py={10} id="ipr">
@@ -64,11 +37,11 @@ export default function IntellectualProperty() {
         justifyContent="center"
         gap={3}
       >
-        INTELLECTUAL PROPERTY
+        {t.ipr.title}
       </Heading>
 
       <VStack spacing={6} align="stretch">
-        {iprs.map((ipr, index) => (
+        {t.ipr.items.map((ipr, index) => (
           <MotionBox
             key={index}
             p={8}
@@ -94,7 +67,7 @@ export default function IntellectualProperty() {
                     py={1}
                     borderRadius="full"
                   >
-                    HAK CIPTA (COPYRIGHT)
+                    {t.ipr.badgeCopyright}
                   </Badge>
                   <Badge
                     colorScheme="purple"
@@ -119,7 +92,7 @@ export default function IntellectualProperty() {
                   <HStack>
                     <Icon as={FaUserTie} color="orange.400" />
                     <Text>
-                      Role:{" "}
+                      {t.ipr.role}:{" "}
                       <Text as="span" fontWeight="bold" color="white">
                         {ipr.role}
                       </Text>
@@ -127,11 +100,15 @@ export default function IntellectualProperty() {
                   </HStack>
                   <HStack>
                     <Icon as={FaCopyright} color="orange.400" />
-                    <Text>Year: {ipr.year}</Text>
+                    <Text>
+                      {t.ipr.year}: {ipr.year}
+                    </Text>
                   </HStack>
                   <HStack>
                     <Icon as={FaCertificate} color="orange.400" />
-                    <Text>Lead: {ipr.lead}</Text>
+                    <Text>
+                      {t.ipr.lead}: {ipr.lead}
+                    </Text>
                   </HStack>
                 </HStack>
               </Box>
@@ -151,7 +128,7 @@ export default function IntellectualProperty() {
           rightIcon={<FaExternalLinkAlt />}
           _hover={{ bg: "orange.500", color: "white" }}
         >
-          Verify Records on SINTA
+          {t.ipr.verify}
         </Button>
       </Flex>
     </Container>

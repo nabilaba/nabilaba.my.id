@@ -11,52 +11,14 @@ import {
 } from "@chakra-ui/react";
 import { FaCalendarAlt, FaCode, FaTrophy, FaChartLine } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useLang } from "../context/LanguageContext";
 
 const MotionBox = motion(Box);
 
+const ICONS = [FaChartLine, FaCode, FaTrophy, FaTrophy];
+
 export default function Experiences() {
-  const experiences = [
-    {
-      company: "GiNaSTel",
-      role: "Staff Accounting",
-      date: "Jun 2023 - Jul 2023",
-      description:
-        "Managed daily financial records and operational revenue calculations for 30+ product outlets. Ensured accuracy in sorting and packaging logistics for large-scale orders.",
-      type: "Work",
-      icon: FaChartLine,
-    },
-    {
-      company: "SYNRGY Academy (BCA)",
-      role: "Full-Stack Web Development",
-      date: "Aug 2022 - Feb 2023",
-      description:
-        "Mastered the MERN stack (MongoDB, Express, React, Node.js). Built scalable frontend and backend websites capable of standalone deployment. Practice next.js and PostgreSQL.",
-      type: "Bootcamp",
-      icon: FaCode,
-    },
-    {
-      company: "Kementerian Kominfo",
-      role: "Cyber Security Analyst",
-      date: "Aug 2022 - Dec 2022",
-      description:
-        "Selected as the 50 Best Apprentices. Collaborated on weekly cyber threat analysis articles and built a dedicated platform to publish group research results.",
-      type: "Internship",
-      highlight: true,
-      icon: FaTrophy,
-      achievements: ["🏆 Selected as 50 Best Apprentices"],
-    },
-    {
-      company: "Ruangguru x Kampus Merdeka",
-      role: "Frontend Engineering",
-      date: "Feb 2022 - Jun 2022",
-      description:
-        "Top 5 Finalist (out of 80 groups). Led the final assignment team, built interactive web apps using ReactJS, and developed game logic with pure JavaScript/DOM.",
-      type: "Bootcamp",
-      highlight: true,
-      icon: FaTrophy,
-      achievements: ["🏆 Top 5 Finalist", "📜 Final GPA: 4.00 (Perfect Score)"],
-    },
-  ];
+  const { t } = useLang();
 
   return (
     <Container maxW="container.lg" py={20} id="experience">
@@ -67,7 +29,7 @@ export default function Experiences() {
         bgGradient="linear(to-r, cyan.400, pink.400)"
         bgClip="text"
       >
-        PROFESSIONAL JOURNEY
+        {t.experiences.title}
       </Heading>
 
       <VStack spacing={8} align="stretch" position="relative">
@@ -82,7 +44,7 @@ export default function Experiences() {
           zIndex={0}
         />
 
-        {experiences.map((exp, index) => (
+        {t.experiences.items.map((exp, index) => (
           <Flex
             key={index}
             direction={{
@@ -113,14 +75,10 @@ export default function Experiences() {
                 borderTop: "10px solid transparent",
                 borderBottom: "10px solid transparent",
                 [index % 2 === 0 ? "borderLeft" : "borderRight"]: {
-                  md: `10px solid ${
-                    exp.highlight ? "#2C7A7B" : "rgba(255, 255, 255, 0.08)"
-                  }`,
+                  md: `10px solid ${exp.highlight ? "#2C7A7B" : "rgba(255, 255, 255, 0.08)"}`,
                 },
                 borderRight: {
-                  base: `10px solid ${
-                    exp.highlight ? "#2C7A7B" : "rgba(255, 255, 255, 0.08)"
-                  }`,
+                  base: `10px solid ${exp.highlight ? "#2C7A7B" : "rgba(255, 255, 255, 0.08)"}`,
                   md: "none",
                 },
               }}
@@ -159,8 +117,7 @@ export default function Experiences() {
                 {exp.description}
               </Text>
 
-              {/* Added Achievement Section using original Badge styles */}
-              {exp.achievements && (
+              {exp.achievements && exp.achievements.length > 0 && (
                 <HStack spacing={2} mt={3} wrap="wrap">
                   {exp.achievements.map((ach, i) => (
                     <Badge
@@ -195,7 +152,7 @@ export default function Experiences() {
               justifyContent="center"
               zIndex={2}
             >
-              <Icon as={exp.icon} color="cyan.400" w={4} h={4} />
+              <Icon as={ICONS[index]} color="cyan.400" w={4} h={4} />
             </Box>
 
             <Box w={{ base: "0", md: "45%" }} />

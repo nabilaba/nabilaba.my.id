@@ -1,10 +1,13 @@
 import { Flex, Box, Heading, Text, Button } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
+import { useLang } from "../context/LanguageContext";
 
 const MotionBox = motion(Box);
 
 export default function Hero() {
+  const { t } = useLang();
+
   return (
     <Flex
       h="100vh"
@@ -22,7 +25,7 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
       >
         <Text color="cyan.400" letterSpacing="widest" fontWeight="bold" mb={2}>
-          FULLSTACK ENTHUSIAST
+          {t.hero.tagline}
         </Text>
         <Heading
           as="h1"
@@ -47,11 +50,8 @@ export default function Hero() {
           mx="auto"
           mb={8}
           px={4}
-        >
-          Aka <b>Nabil Aba</b>. A "Newbie Permanen" crafting digital experiences
-          from Indonesia. Graduate from UMS, transforming code into energetic
-          solutions.
-        </Text>
+          dangerouslySetInnerHTML={{ __html: t.hero.bio }}
+        />
         <Flex
           gap={4}
           justify="center"
@@ -67,7 +67,7 @@ export default function Hero() {
             px={8}
             _hover={{ transform: "scale(1.05)" }}
           >
-            View My Work
+            {t.hero.viewWork}
           </Button>
           <Button
             as="a"

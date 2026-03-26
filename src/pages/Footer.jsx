@@ -1,8 +1,19 @@
-import { Box, Container, Heading, Text, Flex, Icon, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Heading,
+  Text,
+  Flex,
+  Icon,
+  Link,
+} from "@chakra-ui/react";
 import { FaEnvelope, FaGithub } from "react-icons/fa";
 import { SiLinkedin } from "react-icons/si";
+import { useLang } from "../context/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLang();
+
   return (
     <Box
       bg="blackAlpha.800"
@@ -14,10 +25,10 @@ export default function Footer() {
     >
       <Container maxW="container.md" textAlign="center">
         <Heading size="lg" mb={6}>
-          Let's Build Something Amazing
+          {t.footer.heading}
         </Heading>
         <Text color="gray.400" mb={8}>
-          Open for collaboration or just a chat about technology and React.
+          {t.footer.sub}
         </Text>
         <Flex justify="center" gap={6} mb={8}>
           <Link href="mailto:nabilazizbimaanggita@gmail.com">
@@ -48,7 +59,7 @@ export default function Footer() {
         <Text fontSize="sm" color="gray.600">
           © {new Date().getFullYear()} Nabil Aziz Bima Anggita (Nabil Aba).{" "}
           <br />
-          Designed with Heart wkwkwk.
+          {t.footer.copyright}
         </Text>
       </Container>
     </Box>

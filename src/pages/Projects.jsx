@@ -14,194 +14,15 @@ import {
 import { FaGithub, FaGlobe } from "react-icons/fa";
 import { SiCanva } from "react-icons/si";
 import { motion } from "framer-motion";
+import { useLang } from "../context/LanguageContext";
 
 const MotionBox = motion(Box);
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState("React");
+  const { t } = useLang();
 
-  const projectData = {
-    React: [
-      {
-        title: "Pusat Ngoding",
-        desc: "Platform pencarian mentor ngoding pribadi. Menghubungkan pembelajar dengan ahli.",
-        tech: ["React", "JS"],
-        link: "https://github.com/nabilaba/pusatngoding",
-        demo: "https://pusatngoding.netlify.app/",
-      },
-      {
-        title: "Binar Car Rental",
-        desc: "Full-stack car rental application featuring secure auth, payments, and admin dashboard.",
-        tech: ["React", "Bootstrap"],
-        link: "https://github.com/nabilaba/binar-car-rental-react",
-        demo: "https://bcr-react.vercel.app",
-      },
-      {
-        title: "Parentheses Validation",
-        desc: "Algorithm implementation using React to validate mathematical parentheses structure.",
-        tech: ["React", "Algorithm"],
-        link: "https://github.com/nabilaba/Parentheses-Validation",
-        demo: "https://parentheses-validation.netlify.app",
-      },
-      {
-        title: "Quiz With Trivia",
-        desc: "Website kuis interaktif yang mengambil database soal dari Trivia API.",
-        tech: ["React", "API"],
-        link: "https://github.com/nabilaba/Quiz-With-Trivia",
-        demo: "https://qwt.netlify.app",
-      },
-      {
-        title: "The Hike",
-        desc: "Interactive hiking trail exploration website.",
-        tech: ["React", "UI"],
-        link: "https://github.com/nabilaba/landingpage-thehike",
-        demo: "https://the-hike.netlify.app",
-      },
-      {
-        title: "PPDB SMA Muhammadiyah",
-        desc: "Portal Penerimaan Peserta Didik Baru Online untuk SMA Muhammadiyah Al-Kautsar PK.",
-        tech: ["React", "Web", "System"],
-        link: "#",
-        demo: "#",
-      },
-      {
-        title: "Voice Library",
-        desc: "AI-powered anime voice library with React and Chakra UI.",
-        tech: ["React", "AI", "Chakra UI"],
-        link: "https://github.com/nabil-aba/voice-library",
-        demo: "#",
-      },
-      {
-        title: "Catatan",
-        desc: "Aplikasi catatan berbasis web dengan fitur CRUD, penyimpanan lokal, dan UI sederhana.",
-        tech: ["React", "LocalStorage"],
-        link: "https://github.com/nabilaba/catatan",
-        demo: "https://aplikasicatatan.netlify.app",
-      },
-    ],
-    PHP: [
-      {
-        title: "HelloSchool",
-        desc: "Academic management system for school administration and student grading.",
-        tech: ["PHP", "MySQL"],
-        link: "#",
-        demo: "#",
-      },
-      {
-        title: "Tugas Praktikum Web",
-        desc: "Collection of web programming assignments and implementations.",
-        tech: ["PHP", "HTML", "CSS"],
-        link: "#",
-        demo: "#",
-      },
-    ],
-    Others: [
-      {
-        title: "Snake Game Advanced",
-        desc: "Classic game rebuilt with pure JavaScript DOM manipulation. Features custom difficulty levels.",
-        tech: ["JS", "DOM", "HTML"],
-        link: "https://github.com/nabilaba/Snake-Game-Advanced",
-        demo: "https://snake-game-advanced.netlify.app",
-      },
-      {
-        title: "N-Grader",
-        desc: "Automated grading tool designed to streamline the evaluation process for assignments.",
-        tech: ["Batch", "Automation"],
-        link: "https://github.com/nabilaba/N-Grader",
-        demo: "#",
-      },
-      {
-        title: "Mobile App Dev Test",
-        desc: "Mobile application development test projects and components.",
-        tech: ["Android", "Java"],
-        link: "https://github.com/nabilaba/Mobile-App-Development-Test",
-        demo: "#",
-      },
-      {
-        title: "Abzenzi",
-        desc: "Absensi berbasis aplikasi Android, memudahkan pencatatan kehadiran secara digital.",
-        tech: ["Android", "Java"],
-        link: "https://github.com/nabilaba/Abzenzi",
-        demo: "#",
-      },
-      {
-        title: "WhatsApp Bot",
-        desc: "WhatsApp bot with various automated features and command handling.",
-        tech: ["JS", "Node.js", "Bot"],
-        link: "https://github.com/nabilaba/whatsapp-bot",
-        demo: "#",
-      },
-      {
-        title: "Remove Background",
-        desc: "Web tool to remove image backgrounds automatically using AI.",
-        tech: ["JS", "AI", "Web"],
-        link: "https://github.com/nabilaba/remove-background",
-        demo: "#",
-      },
-      {
-        title: "Nabil WYSIWYG",
-        desc: "Custom WYSIWYG rich text editor built with JavaScript for React + Chakra UI.",
-        tech: ["JS", "Editor", "NPM"],
-        link: "https://github.com/nabilaba/NabilWysiwyg",
-        demo: "#",
-      },
-      {
-        title: "Anime Puzzle",
-        desc: "Anime-themed puzzle game as a Progressive Web App (PWA), playable on any device.",
-        tech: ["React", "PWA", "Game"],
-        link: "https://github.com/nabil-aba/game/tree/main/anime-puzzle",
-        demo: "#",
-      },
-      {
-        title: "Anime Listening Test",
-        desc: "Interactive web game to test your knowledge of anime opening/ending songs.",
-        tech: ["JS", "Game", "Anime"],
-        link: "https://github.com/nabil-aba/game/tree/main/anime-listening-test",
-        demo: "#",
-      },
-      {
-        title: "Nabil Hero",
-        desc: "Anime-style hero platformer web game with multiple levels and audio.",
-        tech: ["JS", "Game", "Anime"],
-        link: "https://github.com/nabil-aba/game/tree/main/nabil-hero",
-        demo: "#",
-      },
-      {
-        title: "Happy Birthday Template",
-        desc: "Koleksi template halaman web ucapan ulang tahun yang interaktif, animatif, dan mudah dikustomisasi.",
-        tech: ["HTML", "JS", "Template"],
-        link: "https://github.com/nabil-aba/hbd",
-        demo: "#",
-      },
-    ],
-    Content: [
-      {
-        title: "AI Workshop Materials",
-        desc: "Created instructional materials for 'Pemanfaatan AI' workshop. Designed slides on AI fundamentals, ethical impacts, and practical tools.",
-        tech: ["Canva", "AI Literacy"],
-        location: "SMP Birul Walidain Muhammadiyah, Sragen",
-        date: "Nov 12, 2025",
-        role: "Content Creator & Co-Facilitator",
-        link: "#",
-      },
-      {
-        title: "Graphic Design Training",
-        desc: "Developed module 'Pelatihan Desain Grafis dengan Canva'. Created visual assets and step-by-step tutorials for beginners.",
-        tech: ["Canva", "Design"],
-        location: "SMP IT, Sragen",
-        date: "Sept 25, 2024",
-        role: "Content Creator & Support",
-        link: "#",
-      },
-    ],
-  };
-
-  const getProjects = () => {
-    if (activeTab === "React") return projectData.React;
-    if (activeTab === "PHP") return projectData.PHP;
-    if (activeTab === "Content") return projectData.Content;
-    return projectData.Others;
-  };
+  const projectData = t.projects.items;
 
   return (
     <Container maxW="container.xl" py={20} id="projects">
@@ -211,7 +32,7 @@ export default function Projects() {
         mb={12}
         textAlign="center"
       >
-        SELECTED WORKS
+        {t.projects.title}
       </Heading>
 
       <Flex justify="center" mb={12} wrap="wrap" gap={2}>
@@ -231,13 +52,13 @@ export default function Projects() {
               color: "white",
             }}
           >
-            {tab === "Others" ? "Native & Others" : tab}
+            {tab === "Others" ? t.projects.others : tab}
           </Button>
         ))}
       </Flex>
 
       <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
-        {getProjects().map((project, i) => (
+        {projectData[activeTab].map((project, i) => (
           <MotionBox
             key={i}
             initial={{ opacity: 0, y: 20 }}
@@ -269,9 +90,7 @@ export default function Projects() {
                 zIndex: 0,
                 pointerEvents: "none",
               }}
-              _hover={{
-                boxShadow: "8px 8px 0px black",
-              }}
+              _hover={{ boxShadow: "8px 8px 0px black" }}
               transition="all 0.2s"
             >
               <HStack spacing={2} mb={4} zIndex={1}>
@@ -300,13 +119,11 @@ export default function Projects() {
                   📍 {project.location}
                 </Text>
               )}
-
               {project.date && (
                 <Text fontSize="xs" color="purple.300" mb={2} zIndex={1}>
                   📅 {project.date}
                 </Text>
               )}
-
               {project.role && (
                 <Text
                   fontSize="xs"
@@ -315,7 +132,7 @@ export default function Projects() {
                   fontWeight="bold"
                   zIndex={1}
                 >
-                  Role: {project.role}
+                  {t.projects.role}: {project.role}
                 </Text>
               )}
 
@@ -357,7 +174,9 @@ export default function Projects() {
                     boxShadow: "1px 1px 0px black",
                   }}
                 >
-                  {project.location ? "View Material" : "Repository"}
+                  {project.location
+                    ? t.projects.viewMaterial
+                    : t.projects.repository}
                 </Button>
 
                 {!project.location && (
@@ -387,7 +206,7 @@ export default function Projects() {
                       boxShadow: "1px 1px 0px black",
                     }}
                   >
-                    Live Demo
+                    {t.projects.liveDemo}
                   </Button>
                 )}
               </HStack>

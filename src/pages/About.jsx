@@ -10,10 +10,13 @@ import {
 import { FaCode, FaAndroid } from "react-icons/fa";
 import { SiChakraui } from "react-icons/si";
 import { motion } from "framer-motion";
+import { useLang } from "../context/LanguageContext";
 
 const MotionBox = motion(Box);
 
 export default function About() {
+  const { t } = useLang();
+
   return (
     <Container maxW="container.lg" py={20} id="about">
       <Flex direction={{ base: "column", lg: "row" }} align="center" gap={10}>
@@ -25,19 +28,22 @@ export default function About() {
             borderColor="cyan.400"
             pl={4}
           >
-            WHO AM I?
+            {t.about.title}
           </Heading>
-          <Text fontSize="lg" color="gray.300" mb={4}>
-            I am <b>Nabil Aziz Bima Anggita</b>, a graduate in{" "}
-            <b>Informatika</b> from <b>Universitas Muhammadiyah Surakarta</b>.
-          </Text>
-          <Text fontSize="lg" color="gray.300" mb={4}>
-            I have a deep interest in <b>Fullstack Engineering</b>, Android OS
-            modification, and shell scripting.
-          </Text>
+          <Text
+            fontSize="lg"
+            color="gray.300"
+            mb={4}
+            dangerouslySetInnerHTML={{ __html: t.about.p1 }}
+          />
+          <Text
+            fontSize="lg"
+            color="gray.300"
+            mb={4}
+            dangerouslySetInnerHTML={{ __html: t.about.p2 }}
+          />
           <Text fontSize="lg" color="gray.300">
-            I love exploring the intersection of logic and creativity through
-            code.
+            {t.about.p3}
           </Text>
         </Box>
         <MotionBox
@@ -52,21 +58,21 @@ export default function About() {
         >
           <VStack align="start" spacing={4}>
             <Heading size="md" color="purple.300">
-              Stats
+              {t.about.stats}
             </Heading>
             <Flex align="center" gap={3}>
               <Icon as={FaCode} boxSize={6} color="cyan.400" />
               <Text>
-                <b>45+</b> Repositories on Github
+                <b>45+</b> {t.about.repos}
               </Text>
             </Flex>
             <Flex align="center" gap={3}>
               <Icon as={FaAndroid} boxSize={6} color="green.400" />
-              <Text>Android & Web Developer</Text>
+              <Text>{t.about.androidWeb}</Text>
             </Flex>
             <Flex align="center" gap={3}>
               <Icon as={SiChakraui} boxSize={6} color="teal.300" />
-              <Text>Chakra UI Specialist</Text>
+              <Text>{t.about.chakra}</Text>
             </Flex>
           </VStack>
         </MotionBox>

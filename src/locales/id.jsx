@@ -1,0 +1,351 @@
+const id = {
+  meta: {
+    code: "id",
+    label: "Indonesia",
+    flag: "🇮🇩",
+  },
+  navbar: {
+    about: "Tentang",
+    experience: "Pengalaman",
+    publications: "Publikasi",
+    ipr: "HKI",
+    skills: "Keahlian",
+    projects: "Proyek",
+    contact: "Kontak",
+  },
+  hero: {
+    tagline: "ANTUSIAS FULLSTACK",
+    bio: 'Aka <b>Nabil Aba</b>. Seorang "Newbie Permanen" yang membangun pengalaman digital dari Indonesia. Lulusan UMS, mengubah kode menjadi solusi yang berenergi.',
+    viewWork: "Lihat Karya Saya",
+  },
+  about: {
+    title: "SIAPA AKU?",
+    p1: "Saya <b>Nabil Aziz Bima Anggita</b>, lulusan <b>Informatika</b> dari <b>Universitas Muhammadiyah Surakarta</b>.",
+    p2: "Saya memiliki minat mendalam pada <b>Fullstack Engineering</b>, modifikasi Android OS, dan shell scripting.",
+    p3: "Saya suka mengeksplorasi perpaduan logika dan kreativitas melalui kode.",
+    stats: "Statistik",
+    repos: "Repositori di Github",
+    androidWeb: "Developer Android & Web",
+    chakra: "Spesialis Chakra UI",
+  },
+  experiences: {
+    title: "PERJALANAN PROFESIONAL",
+    items: [
+      {
+        company: "GiNaSTel",
+        role: "Staf Akuntansi",
+        date: "Jun 2023 - Jul 2023",
+        description:
+          "Mengelola catatan keuangan harian dan perhitungan pendapatan operasional untuk 30+ gerai produk. Memastikan akurasi dalam logistik penyortiran dan pengemasan untuk pesanan skala besar.",
+        type: "Kerja",
+        achievements: [],
+      },
+      {
+        company: "SYNRGY Academy (BCA)",
+        role: "Pengembangan Web Full-Stack",
+        date: "Aug 2022 - Feb 2023",
+        description:
+          "Menguasai MERN stack (MongoDB, Express, React, Node.js). Membangun website frontend dan backend yang dapat dideploy secara mandiri. Praktik Next.js dan PostgreSQL.",
+        type: "Bootcamp",
+        achievements: [],
+      },
+      {
+        company: "Kementerian Kominfo",
+        role: "Analis Keamanan Siber",
+        date: "Aug 2022 - Dec 2022",
+        description:
+          "Terpilih sebagai 50 Magang Terbaik. Berkolaborasi dalam artikel analisis ancaman siber mingguan dan membangun platform khusus untuk mempublikasikan hasil riset kelompok.",
+        type: "Magang",
+        highlight: true,
+        achievements: ["🏆 Terpilih sebagai 50 Magang Terbaik"],
+      },
+      {
+        company: "Ruangguru x Kampus Merdeka",
+        role: "Rekayasa Frontend",
+        date: "Feb 2022 - Jun 2022",
+        description:
+          "Top 5 Finalis (dari 80 kelompok). Memimpin tim tugas akhir, membangun aplikasi web interaktif menggunakan ReactJS, dan mengembangkan logika game dengan JavaScript/DOM murni.",
+        type: "Bootcamp",
+        highlight: true,
+        achievements: [
+          "🏆 Top 5 Finalis",
+          "📜 IPK Akhir: 4.00 (Nilai Sempurna)",
+        ],
+      },
+    ],
+  },
+  publications: {
+    title: "PUBLIKASI",
+    readPaper: "Baca Makalah",
+    items: [
+      {
+        title:
+          "Digitalisasi Sosialisasi Kegiatan Pada Ranting Muhammadiyah Desa Ngemplak...",
+        journal: "BUDIMAS: Jurnal Pengabdian Masyarakat",
+        year: "2024",
+        authors: "I.C. Utomo, D. Priyawati, Nabil Aziz Bima Anggita",
+        link: "https://jurnal.stie-aas.ac.id/index.php/budimas/article/view/...",
+        description:
+          "Mengembangkan sistem informasi untuk mendigitalisasi kegiatan sosialisasi Ranting Muhammadiyah di Desa Ngemplak.",
+      },
+      {
+        title: "Implementasi MERN Stack pada Pengembangan Sistem",
+        journal: "Jurnal Swabumi (Vol 11, No 2)",
+        year: "2023",
+        authors: "Nabil Aziz Bima Anggita, et al.",
+        link: "https://ejournal.bsi.ac.id/jurnal/index.php/swabumi/article/view/15965/0",
+        description:
+          "Penelitian yang dipublikasikan menjelaskan implementasi MongoDB, Express, React, dan Node.js dalam pengembangan sistem web modern.",
+      },
+      {
+        title: "Sistem Penerimaan Peserta Didik Baru (PPDB) Online",
+        journal: "Eprints UMS",
+        year: "2023",
+        authors: "Nabil Aziz Bima Anggita",
+        link: "https://eprints.ums.ac.id/110545/",
+        description:
+          "Penelitian dan pengembangan sistem penerimaan berbasis web untuk SMA Muhammadiyah Al-Kautsar PK, menyederhanakan proses pendaftaran.",
+      },
+    ],
+  },
+  skills: {
+    title: "ARSENAL TEKNOLOGI",
+  },
+  projects: {
+    title: "KARYA PILIHAN",
+    viewMaterial: "Lihat Materi",
+    repository: "Repositori",
+    liveDemo: "Demo Langsung",
+    role: "Peran",
+    others: "Native & Lainnya",
+    items: {
+      React: [
+        {
+          title: "Pusat Ngoding",
+          desc: "Platform pencarian mentor ngoding pribadi. Menghubungkan pembelajar dengan ahli.",
+          tech: ["React", "JS"],
+          link: "https://github.com/nabilaba/pusatngoding",
+          demo: "https://pusatngoding.netlify.app/",
+        },
+        {
+          title: "Binar Car Rental",
+          desc: "Aplikasi rental mobil full-stack dengan autentikasi aman, pembayaran, dan dasbor admin.",
+          tech: ["React", "Bootstrap"],
+          link: "https://github.com/nabilaba/binar-car-rental-react",
+          demo: "https://bcr-react.vercel.app",
+        },
+        {
+          title: "Parentheses Validation",
+          desc: "Implementasi algoritma menggunakan React untuk memvalidasi struktur tanda kurung matematis.",
+          tech: ["React", "Algorithm"],
+          link: "https://github.com/nabilaba/Parentheses-Validation",
+          demo: "https://parentheses-validation.netlify.app",
+        },
+        {
+          title: "Quiz With Trivia",
+          desc: "Website kuis interaktif yang mengambil database soal dari Trivia API.",
+          tech: ["React", "API"],
+          link: "https://github.com/nabilaba/Quiz-With-Trivia",
+          demo: "https://qwt.netlify.app",
+        },
+        {
+          title: "The Hike",
+          desc: "Website eksplorasi jalur pendakian interaktif.",
+          tech: ["React", "UI"],
+          link: "https://github.com/nabilaba/landingpage-thehike",
+          demo: "https://the-hike.netlify.app",
+        },
+        {
+          title: "PPDB SMA Muhammadiyah",
+          desc: "Portal Penerimaan Peserta Didik Baru Online untuk SMA Muhammadiyah Al-Kautsar PK.",
+          tech: ["React", "Web", "System"],
+          link: "#",
+          demo: "#",
+        },
+        {
+          title: "Voice Library",
+          desc: "Perpustakaan suara anime bertenaga AI dengan React dan Chakra UI.",
+          tech: ["React", "AI", "Chakra UI"],
+          link: "https://github.com/nabil-aba/voice-library",
+          demo: "#",
+        },
+        {
+          title: "Catatan",
+          desc: "Aplikasi catatan berbasis web dengan fitur CRUD, penyimpanan lokal, dan UI sederhana.",
+          tech: ["React", "LocalStorage"],
+          link: "https://github.com/nabilaba/catatan",
+          demo: "https://aplikasicatatan.netlify.app",
+        },
+      ],
+      PHP: [
+        {
+          title: "HelloSchool",
+          desc: "Sistem manajemen akademik untuk administrasi sekolah dan penilaian siswa.",
+          tech: ["PHP", "MySQL"],
+          link: "#",
+          demo: "#",
+        },
+        {
+          title: "Tugas Praktikum Web",
+          desc: "Kumpulan tugas dan implementasi pemrograman web.",
+          tech: ["PHP", "HTML", "CSS"],
+          link: "#",
+          demo: "#",
+        },
+      ],
+      Others: [
+        {
+          title: "Snake Game Advanced",
+          desc: "Game klasik yang dibangun ulang dengan manipulasi DOM JavaScript murni. Dilengkapi level kesulitan kustom.",
+          tech: ["JS", "DOM", "HTML"],
+          link: "https://github.com/nabilaba/Snake-Game-Advanced",
+          demo: "https://snake-game-advanced.netlify.app",
+        },
+        {
+          title: "N-Grader",
+          desc: "Alat penilaian otomatis yang dirancang untuk menyederhanakan proses evaluasi tugas.",
+          tech: ["Batch", "Automation"],
+          link: "https://github.com/nabilaba/N-Grader",
+          demo: "#",
+        },
+        {
+          title: "Mobile App Dev Test",
+          desc: "Proyek uji dan komponen pengembangan aplikasi mobile.",
+          tech: ["Android", "Java"],
+          link: "https://github.com/nabilaba/Mobile-App-Development-Test",
+          demo: "#",
+        },
+        {
+          title: "Abzenzi",
+          desc: "Absensi berbasis aplikasi Android, memudahkan pencatatan kehadiran secara digital.",
+          tech: ["Android", "Java"],
+          link: "https://github.com/nabilaba/Abzenzi",
+          demo: "#",
+        },
+        {
+          title: "WhatsApp Bot",
+          desc: "Bot WhatsApp dengan berbagai fitur otomatis dan penanganan perintah.",
+          tech: ["JS", "Node.js", "Bot"],
+          link: "https://github.com/nabilaba/whatsapp-bot",
+          demo: "#",
+        },
+        {
+          title: "Remove Background",
+          desc: "Alat web untuk menghapus latar belakang gambar secara otomatis menggunakan AI.",
+          tech: ["JS", "AI", "Web"],
+          link: "https://github.com/nabilaba/remove-background",
+          demo: "#",
+        },
+        {
+          title: "Nabil WYSIWYG",
+          desc: "Editor teks kaya WYSIWYG kustom yang dibangun dengan JavaScript untuk React + Chakra UI.",
+          tech: ["JS", "Editor", "NPM"],
+          link: "https://github.com/nabilaba/NabilWysiwyg",
+          demo: "#",
+        },
+        {
+          title: "Anime Puzzle",
+          desc: "Game puzzle bertema anime sebagai Progressive Web App (PWA), bisa dimainkan di perangkat apa pun.",
+          tech: ["React", "PWA", "Game"],
+          link: "https://github.com/nabil-aba/game/tree/main/anime-puzzle",
+          demo: "#",
+        },
+        {
+          title: "Anime Listening Test",
+          desc: "Game web interaktif untuk menguji pengetahuanmu tentang lagu opening/ending anime.",
+          tech: ["JS", "Game", "Anime"],
+          link: "https://github.com/nabil-aba/game/tree/main/anime-listening-test",
+          demo: "#",
+        },
+        {
+          title: "Nabil Hero",
+          desc: "Game web platformer hero bergaya anime dengan banyak level dan audio.",
+          tech: ["JS", "Game", "Anime"],
+          link: "https://github.com/nabil-aba/game/tree/main/nabil-hero",
+          demo: "#",
+        },
+        {
+          title: "Happy Birthday Template",
+          desc: "Koleksi template halaman web ucapan ulang tahun yang interaktif, animatif, dan mudah dikustomisasi.",
+          tech: ["HTML", "JS", "Template"],
+          link: "https://github.com/nabil-aba/hbd",
+          demo: "#",
+        },
+      ],
+      Content: [
+        {
+          title: "AI Workshop Materials",
+          desc: "Membuat materi instruksional untuk workshop 'Pemanfaatan AI'. Mendesain slide tentang dasar-dasar AI, dampak etis, dan alat praktis.",
+          tech: ["Canva", "AI Literacy"],
+          location: "SMP Birul Walidain Muhammadiyah, Sragen",
+          date: "Nov 12, 2025",
+          role: "Pembuat Konten & Ko-Fasilitator",
+          link: "#",
+        },
+        {
+          title: "Graphic Design Training",
+          desc: "Mengembangkan modul 'Pelatihan Desain Grafis dengan Canva'. Membuat aset visual dan tutorial langkah demi langkah untuk pemula.",
+          tech: ["Canva", "Design"],
+          location: "SMP IT, Sragen",
+          date: "Sept 25, 2024",
+          role: "Pembuat Konten & Pendukung",
+          link: "#",
+        },
+      ],
+    },
+  },
+  aiPerspective: {
+    title: "Perspektifku tentang AI",
+    p1: "Saya memandang Kecerdasan Buatan bukan sebagai pengganti, melainkan sebagai <cyan>akselerator yang powerful</cyan>. AI membantu saya membangun lebih cepat, debug lebih cerdas, dan mengeksplorasi kemungkinan baru.",
+    p2: "Namun, ketika AI mentok (dan itu sering terjadi), di situlah rekayasa sejati dimulai. Saya mengandalkan kemampuan pemecahan masalah dasar, menyelami dokumentasi, komunitas seperti StackOverflow, dan platform seperti GeeksForGeeks untuk merancang solusi yang kokoh.",
+    tags: {
+      stackoverflow: "StackOverflow",
+      geeksforgeeks: "GeeksForGeeks",
+      criticalThinking: "Berpikir Kritis",
+    },
+  },
+  ipr: {
+    title: "KEKAYAAN INTELEKTUAL",
+    badgeCopyright: "HAK CIPTA (COPYRIGHT)",
+    role: "Peran",
+    year: "Tahun",
+    lead: "Pembimbing",
+    verify: "Verifikasi di SINTA",
+    items: [
+      {
+        id: "EC002025152998",
+        title:
+          "Aplikasi Layanan Pendaftaran Kartu Anggota Muhammadiyah PCM Kebakkramat",
+        year: "2025",
+        type: "Program Komputer",
+        role: "Inventor",
+        lead: "Dedi Gunawan, Ph.D.",
+      },
+      {
+        id: "EC00202423523",
+        title:
+          "Sistem Informasi Presensi Kehadiran Dan Catatan Kegiatan Harian Guru MIM Taraman Berbasis Web",
+        year: "2024",
+        type: "Program Komputer",
+        role: "Inventor",
+        lead: "Dedi Gunawan, Ph.D.",
+      },
+      {
+        id: "EC00202343330",
+        title:
+          "Sistem Informasi Penerimaan Peserta Didik Baru (PPDB) SMA Muhammadiyah Al Kautsar Program Khusus Kartasura Berbasis Web",
+        year: "2023",
+        type: "Program Komputer",
+        role: "Inventor",
+        lead: "Dedi Gunawan, Ph.D.",
+      },
+    ],
+  },
+  footer: {
+    heading: "Ayo Bangun Sesuatu yang Luar Biasa",
+    sub: "Terbuka untuk kolaborasi atau sekadar ngobrol tentang teknologi dan React.",
+    copyright: "Dibuat dengan Hati wkwkwk.",
+  },
+};
+
+export default id;
