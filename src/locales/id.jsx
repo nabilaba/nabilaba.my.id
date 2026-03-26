@@ -6,6 +6,7 @@ const id = {
   },
   navbar: {
     about: "Tentang",
+    education: "Pendidikan",
     experience: "Pengalaman",
     publications: "Publikasi",
     ipr: "HKI",
@@ -14,23 +15,63 @@ const id = {
     contact: "Kontak",
   },
   hero: {
-    tagline: "ANTUSIAS FULLSTACK",
+    tagline: "ANTUSIAS FULLSTACK · M.Kom",
     bio: 'Aka <b>Nabil Aba</b>. Seorang "Newbie Permanen" yang membangun pengalaman digital dari Indonesia. Lulusan UMS, mengubah kode menjadi solusi yang berenergi.',
     viewWork: "Lihat Karya Saya",
   },
   about: {
     title: "SIAPA AKU?",
-    p1: "Saya <b>Nabil Aziz Bima Anggita</b>, lulusan <b>Informatika</b> dari <b>Universitas Muhammadiyah Surakarta</b>.",
+    p1: "Saya <b>Nabil Aziz Bima Anggita</b>, lulusan <b>Informatika</b> dari <b>Universitas Muhammadiyah Surakarta</b> — dengan gelar <b>Sarjana (S.Kom)</b> dan <b>Magister (M.Kom)</b> Informatika.",
     p2: "Saya memiliki minat mendalam pada <b>Fullstack Engineering</b>, modifikasi Android OS, dan shell scripting.",
     p3: "Saya suka mengeksplorasi perpaduan logika dan kreativitas melalui kode.",
     stats: "Statistik",
     repos: "Repositori di Github",
     androidWeb: "Developer Android & Web",
     chakra: "Spesialis Chakra UI",
+    education: "S.Kom & M.Kom — Informatika, UMS",
+  },
+  education: {
+    title: "PENDIDIKAN",
+    items: [
+      {
+        institution: "Universitas Muhammadiyah Surakarta",
+        degree: "Magister Informatika (M.Kom)",
+        field: "Informatika",
+        date: "2023 – 2026",
+        description:
+          "Mendalami riset rekayasa perangkat lunak dan sistem informasi. Aktif berkontribusi dalam kegiatan pengabdian masyarakat melalui pengembangan sistem web untuk institusi akademik dan sosial.",
+        gpa: "3.76 / 4.00 (Cum Laude)",
+      },
+      {
+        institution: "Universitas Muhammadiyah Surakarta",
+        degree: "Sarjana Informatika (S.Kom)",
+        field: "Informatika",
+        date: "2019 – 2023",
+        description:
+          "Fokus pada pengembangan web, rekayasa perangkat lunak, dan sistem informasi. Mengikuti program Kampus Merdeka termasuk Ruangguru dan magang Kementerian Kominfo.",
+        gpa: "3.82 / 4.00 (Cum Laude)",
+      },
+    ],
   },
   experiences: {
     title: "PERJALANAN PROFESIONAL",
+    viewConsulting: "Lihat Proyek Konsultasi →",
     items: [
+      {
+        company: "Universitas Muhammadiyah Surakarta",
+        role: "S2 Informatika + Konsultan Web",
+        date: "2023 – 2026",
+        description:
+          "Menempuh S2 Informatika (M.Kom) sambil aktif berkontribusi sebagai konsultan web developer dalam proyek pengabdian masyarakat. Menghasilkan sistem web sesuai kebutuhan klien untuk institusi akademik dan sosial, serta mempublikasikan riset dan mendaftarkan kekayaan intelektual.",
+        type: "Pendidikan & Konsultasi",
+        highlight: true,
+        icon: "FaGraduationCap",
+        achievements: [
+          "🎓 M.Kom — Informatika, UMS",
+          "📄 3 Publikasi",
+          "📜 3 Hak Kekayaan Intelektual (HKI)",
+        ],
+      },
       {
         company: "GiNaSTel",
         role: "Staf Akuntansi",
@@ -38,6 +79,8 @@ const id = {
         description:
           "Mengelola catatan keuangan harian dan perhitungan pendapatan operasional untuk 30+ gerai produk. Memastikan akurasi dalam logistik penyortiran dan pengemasan untuk pesanan skala besar.",
         type: "Kerja",
+        highlight: false,
+        icon: "FaChartLine",
         achievements: [],
       },
       {
@@ -47,6 +90,8 @@ const id = {
         description:
           "Menguasai MERN stack (MongoDB, Express, React, Node.js). Membangun website frontend dan backend yang dapat dideploy secara mandiri. Praktik Next.js dan PostgreSQL.",
         type: "Bootcamp",
+        highlight: false,
+        icon: "FaCode",
         achievements: [],
       },
       {
@@ -57,6 +102,7 @@ const id = {
           "Terpilih sebagai 50 Magang Terbaik. Berkolaborasi dalam artikel analisis ancaman siber mingguan dan membangun platform khusus untuk mempublikasikan hasil riset kelompok.",
         type: "Magang",
         highlight: true,
+        icon: "FaTrophy",
         achievements: ["🏆 Terpilih sebagai 50 Magang Terbaik"],
       },
       {
@@ -67,6 +113,7 @@ const id = {
           "Top 5 Finalis (dari 80 kelompok). Memimpin tim tugas akhir, membangun aplikasi web interaktif menggunakan ReactJS, dan mengembangkan logika game dengan JavaScript/DOM murni.",
         type: "Bootcamp",
         highlight: true,
+        icon: "FaTrophy",
         achievements: [
           "🏆 Top 5 Finalis",
           "📜 IPK Akhir: 4.00 (Nilai Sempurna)",
@@ -93,7 +140,7 @@ const id = {
         journal: "Jurnal Swabumi (Vol 11, No 2)",
         year: "2023",
         authors: "Nabil Aziz Bima Anggita, et al.",
-        link: "https://ejournal.bsi.ac.id/jurnal/index.php/swabumi/article/view/15965/0",
+        link: "https://ejournal.bsi.ac.id/ejurnal/index.php/swabumi/article/view/15965",
         description:
           "Penelitian yang dipublikasikan menjelaskan implementasi MongoDB, Express, React, dan Node.js dalam pengembangan sistem web modern.",
       },
@@ -108,6 +155,53 @@ const id = {
       },
     ],
   },
+  aiPerspective: {
+    title: "Perspektifku tentang AI",
+    p1: "Saya memandang Kecerdasan Buatan bukan sebagai pengganti, melainkan sebagai <cyan>akselerator yang powerful</cyan>. AI membantu saya membangun lebih cepat, debug lebih cerdas, dan mengeksplorasi kemungkinan baru.",
+    p2: "Namun, ketika AI mentok (dan itu sering terjadi), di situlah rekayasa sejati dimulai. Saya mengandalkan kemampuan pemecahan masalah dasar, menyelami dokumentasi, komunitas seperti StackOverflow, dan platform seperti GeeksForGeeks untuk merancang solusi yang kokoh.",
+    tags: {
+      stackoverflow: "StackOverflow",
+      geeksforgeeks: "GeeksForGeeks",
+      criticalThinking: "Berpikir Kritis",
+    },
+  },
+  ipr: {
+    title: "KEKAYAAN INTELEKTUAL",
+    badgeCopyright: "HAK CIPTA (COPYRIGHT)",
+    role: "Peran",
+    year: "Tahun",
+    lead: "Pembimbing",
+    verify: "Verifikasi di SINTA",
+    items: [
+      {
+        id: "EC002025152998",
+        title:
+          "Aplikasi Layanan Pendaftaran Kartu Anggota Muhammadiyah PCM Kebakkramat",
+        year: "2025",
+        type: "Program Komputer",
+        role: "Inventor",
+        lead: "Dedi Gunawan, Ph.D.",
+      },
+      {
+        id: "EC00202423523",
+        title:
+          "Sistem Informasi Presensi Kehadiran Dan Catatan Kegiatan Harian Guru MIM Taraman Berbasis Web",
+        year: "2024",
+        type: "Program Komputer",
+        role: "Inventor",
+        lead: "Dedi Gunawan, Ph.D.",
+      },
+      {
+        id: "EC00202343330",
+        title:
+          "Sistem Informasi Penerimaan Peserta Didik Baru (PPDB) SMA Muhammadiyah Al Kautsar Program Khusus Kartasura Berbasis Web",
+        year: "2023",
+        type: "Program Komputer",
+        role: "Inventor",
+        lead: "Dedi Gunawan, Ph.D.",
+      },
+    ],
+  },
   skills: {
     title: "ARSENAL TEKNOLOGI",
   },
@@ -118,6 +212,9 @@ const id = {
     liveDemo: "Demo Langsung",
     role: "Peran",
     others: "Native & Lainnya",
+    consulting: "Konsultasi",
+    inProgress: "Sedang Dikerjakan",
+    contributedAs: "Berkontribusi sebagai",
     items: {
       React: [
         {
@@ -154,13 +251,6 @@ const id = {
           tech: ["React", "UI"],
           link: "https://github.com/nabilaba/landingpage-thehike",
           demo: "https://the-hike.netlify.app",
-        },
-        {
-          title: "PPDB SMA Muhammadiyah",
-          desc: "Portal Penerimaan Peserta Didik Baru Online untuk SMA Muhammadiyah Al-Kautsar PK.",
-          tech: ["React", "Web", "System"],
-          link: "#",
-          demo: "#",
         },
         {
           title: "Voice Library",
@@ -292,54 +382,89 @@ const id = {
           link: "#",
         },
       ],
+      Consulting: [
+        {
+          title: "PPDB SMA Muhammadiyah Al-Kautsar PK",
+          desc: "Sistem penerimaan peserta didik berbasis web, dikembangkan sebagai proyek akhir S1. Dipublikasikan di Jurnal Swabumi (Vol 11, No 2, 2023). Dievaluasi dengan black-box testing (error rate 0%) dan skor SUS 78.98.",
+          tech: ["React", "MongoDB", "Express", "Node.js"],
+          role: "Lead Developer & Co-Author",
+          location: "SMA Muhammadiyah Al-Kautsar PK, Kartasura",
+          date: "2022 – 2023",
+          journal: "Jurnal Swabumi — BSI",
+          journalLink:
+            "https://ejournal.bsi.ac.id/ejurnal/index.php/swabumi/article/view/15965",
+          hki: "EC00202343330",
+          inProgress: false,
+          isAuthor: true,
+          link: "https://ejournal.bsi.ac.id/ejurnal/index.php/swabumi/article/view/15965",
+          demo: "#",
+        },
+        {
+          title: "Digitalisasi Sosialisasi Ranting Muhammadiyah Ngemplak",
+          desc: "Mengembangkan sistem informasi berbasis web yang digunakan dalam penelitian pengabdian yang dipublikasikan. Berkontribusi sebagai developer di bawah supervisi dosen.",
+          tech: ["Web", "PHP", "System"],
+          role: "Web Developer (Kontributor)",
+          location: "Ranting Muhammadiyah, Desa Ngemplak",
+          date: "2024",
+          journal: "JAIM — STIE AAS",
+          journalLink:
+            "https://jurnal.stie-aas.ac.id/index.php/JAIM/article/view/13292",
+          hki: null,
+          inProgress: false,
+          isAuthor: false,
+          link: "https://jurnal.stie-aas.ac.id/index.php/JAIM/article/view/13292",
+          demo: "#",
+        },
+        {
+          title: "Sistem Informasi LKSA Wisma Asuhan Yatim Nurul Huda",
+          desc: "Sistem web untuk inovasi technopreneurship di LKSA Nurul Huda Kartasura guna mendorong kemandirian finansial santri. Berkontribusi sebagai developer pada riset pengabdian yang dipublikasikan.",
+          tech: ["Web", "System"],
+          role: "Web Developer (Kontributor)",
+          location: "LKSA Wisma Asuhan Yatim Nurul Huda, Kartasura",
+          date: "2024",
+          journal: "AbdiTeknoyasa — UMS",
+          journalLink:
+            "https://journals2.ums.ac.id/abditeknoyasa/article/view/6613",
+          hki: "EC00202423523",
+          inProgress: false,
+          isAuthor: false,
+          link: "https://journals2.ums.ac.id/abditeknoyasa/article/view/6613",
+          demo: "#",
+        },
+        {
+          title: "Web Branding & Marketing — Pesantren Muhammad Al-Fatih",
+          desc: "Mengembangkan solusi teknologi untuk strategi branding digital dan pemasaran produk di Pondok Pesantren Muhammad Al-Fatih Sukoharjo. Berkontribusi sebagai developer pada riset pengabdian yang dipublikasikan.",
+          tech: ["Web", "Digital Marketing"],
+          role: "Web Developer (Kontributor)",
+          location: "Pondok Pesantren Muhammad Al-Fatih, Sukoharjo",
+          date: "2025",
+          journal: "AbdiTeknoyasa — UMS",
+          journalLink:
+            "https://journals2.ums.ac.id/abditeknoyasa/article/view/12992",
+          hki: null,
+          inProgress: false,
+          isAuthor: false,
+          link: "https://journals2.ums.ac.id/abditeknoyasa/article/view/12992",
+          demo: "#",
+        },
+        {
+          title:
+            "Aplikasi Pendaftaran Kartu Anggota Muhammadiyah PCM Kebakkramat",
+          desc: "Aplikasi pendaftaran kartu anggota Muhammadiyah PCM Kebakkramat. Saat ini masih dalam pengembangan sebagai bagian dari pengabdian masyarakat.",
+          tech: ["Web", "System"],
+          role: "Lead Developer",
+          location: "PCM Kebakkramat",
+          date: "2025 – Sekarang",
+          journal: null,
+          journalLink: null,
+          hki: "EC002025152998",
+          inProgress: true,
+          isAuthor: false,
+          link: "#",
+          demo: "#",
+        },
+      ],
     },
-  },
-  aiPerspective: {
-    title: "Perspektifku tentang AI",
-    p1: "Saya memandang Kecerdasan Buatan bukan sebagai pengganti, melainkan sebagai <cyan>akselerator yang powerful</cyan>. AI membantu saya membangun lebih cepat, debug lebih cerdas, dan mengeksplorasi kemungkinan baru.",
-    p2: "Namun, ketika AI mentok (dan itu sering terjadi), di situlah rekayasa sejati dimulai. Saya mengandalkan kemampuan pemecahan masalah dasar, menyelami dokumentasi, komunitas seperti StackOverflow, dan platform seperti GeeksForGeeks untuk merancang solusi yang kokoh.",
-    tags: {
-      stackoverflow: "StackOverflow",
-      geeksforgeeks: "GeeksForGeeks",
-      criticalThinking: "Berpikir Kritis",
-    },
-  },
-  ipr: {
-    title: "KEKAYAAN INTELEKTUAL",
-    badgeCopyright: "HAK CIPTA (COPYRIGHT)",
-    role: "Peran",
-    year: "Tahun",
-    lead: "Pembimbing",
-    verify: "Verifikasi di SINTA",
-    items: [
-      {
-        id: "EC002025152998",
-        title:
-          "Aplikasi Layanan Pendaftaran Kartu Anggota Muhammadiyah PCM Kebakkramat",
-        year: "2025",
-        type: "Program Komputer",
-        role: "Inventor",
-        lead: "Dedi Gunawan, Ph.D.",
-      },
-      {
-        id: "EC00202423523",
-        title:
-          "Sistem Informasi Presensi Kehadiran Dan Catatan Kegiatan Harian Guru MIM Taraman Berbasis Web",
-        year: "2024",
-        type: "Program Komputer",
-        role: "Inventor",
-        lead: "Dedi Gunawan, Ph.D.",
-      },
-      {
-        id: "EC00202343330",
-        title:
-          "Sistem Informasi Penerimaan Peserta Didik Baru (PPDB) SMA Muhammadiyah Al Kautsar Program Khusus Kartasura Berbasis Web",
-        year: "2023",
-        type: "Program Komputer",
-        role: "Inventor",
-        lead: "Dedi Gunawan, Ph.D.",
-      },
-    ],
   },
   footer: {
     heading: "Ayo Bangun Sesuatu yang Luar Biasa",

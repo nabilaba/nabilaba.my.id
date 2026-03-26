@@ -27,6 +27,7 @@ import Projects from "./Projects";
 import Skills from "./Skills";
 import IntellectualProperty from "./IntellectualProperty";
 import Experiences from "./Experiences";
+import Education from "./Education";
 import BackgroundDecorations from "./BackgroundDecorations";
 import { useLang } from "../context/LanguageContext";
 import { LANGUAGES } from "../locales";
@@ -79,6 +80,7 @@ const Navbar = () => {
 
   const navLinks = [
     { label: t.navbar.about, anchor: "about" },
+    { label: t.navbar.education, anchor: "education" },
     { label: t.navbar.experience, anchor: "experience" },
     { label: t.navbar.publications, anchor: "publications" },
     { label: t.navbar.ipr, anchor: "ipr" },
@@ -179,6 +181,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Education />
         <Experiences />
         <Publications />
         <IntellectualProperty />

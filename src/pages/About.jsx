@@ -7,7 +7,7 @@ import {
   Icon,
   VStack,
 } from "@chakra-ui/react";
-import { FaCode, FaAndroid } from "react-icons/fa";
+import { FaCode, FaAndroid, FaGraduationCap } from "react-icons/fa";
 import { SiChakraui } from "react-icons/si";
 import { motion } from "framer-motion";
 import { useLang } from "../context/LanguageContext";
@@ -60,6 +60,10 @@ export default function About() {
             <Heading size="md" color="purple.300">
               {t.about.stats}
             </Heading>
+            <Flex align="center" gap={3}>
+              <Icon as={FaGraduationCap} boxSize={6} color="yellow.400" />
+              <Text>{t.about.education}</Text>
+            </Flex>
             <Flex align="center" gap={3}>
               <Icon as={FaCode} boxSize={6} color="cyan.400" />
               <Text>

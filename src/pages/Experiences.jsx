@@ -8,17 +8,42 @@ import {
   HStack,
   Badge,
   Icon,
+  Button,
 } from "@chakra-ui/react";
-import { FaCalendarAlt, FaCode, FaTrophy, FaChartLine } from "react-icons/fa";
+import {
+  FaCalendarAlt,
+  FaCode,
+  FaTrophy,
+  FaChartLine,
+  FaGraduationCap,
+  FaProjectDiagram,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useLang } from "../context/LanguageContext";
 
 const MotionBox = motion(Box);
 
-const ICONS = [FaChartLine, FaCode, FaTrophy, FaTrophy];
+const ICON_MAP = {
+  FaChartLine,
+  FaCode,
+  FaTrophy,
+  FaGraduationCap,
+};
 
 export default function Experiences() {
   const { t } = useLang();
+
+  const scrollToConsulting = () => {
+    const el = document.getElementById("projects");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        window.dispatchEvent(
+          new CustomEvent("switchProjectTab", { detail: "Consulting" }),
+        );
+      }, 600);
+    }
+  };
 
   return (
     <Container maxW="container.lg" py={20} id="experience">
@@ -97,6 +122,7 @@ export default function Experiences() {
                   <Text>{exp.date}</Text>
                 </HStack>
               </HStack>
+
               <Heading
                 size="md"
                 color="white"
@@ -123,7 +149,9 @@ export default function Experiences() {
                     <Badge
                       key={i}
                       variant="outline"
-                      colorScheme={exp.highlight ? "yellow" : "cyan"}
+                      colorScheme={
+                        exp.icon === "FaGraduationCap" ? "cyan" : "yellow"
+                      }
                       fontSize="xs"
                       px={2}
                       py={1}
@@ -134,6 +162,25 @@ export default function Experiences() {
                     </Badge>
                   ))}
                 </HStack>
+              )}
+
+              {exp.icon === "FaGraduationCap" && (
+                <Button
+                  mt={4}
+                  size="xs"
+                  variant="outline"
+                  colorScheme="orange"
+                  leftIcon={<FaProjectDiagram />}
+                  borderRadius="full"
+                  onClick={scrollToConsulting}
+                  _hover={{
+                    bg: "orange.500",
+                    color: "white",
+                    borderColor: "orange.500",
+                  }}
+                >
+                  {t.experiences.viewConsulting}
+                </Button>
               )}
             </MotionBox>
 
@@ -152,7 +199,12 @@ export default function Experiences() {
               justifyContent="center"
               zIndex={2}
             >
-              <Icon as={ICONS[index]} color="cyan.400" w={4} h={4} />
+              <Icon
+                as={ICON_MAP[exp.icon] ?? FaCode}
+                color="cyan.400"
+                w={4}
+                h={4}
+              />
             </Box>
 
             <Box w={{ base: "0", md: "45%" }} />
