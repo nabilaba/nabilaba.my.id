@@ -67,6 +67,8 @@ export default function BackgroundDecorations() {
       overflow="hidden"
       pointerEvents="none"
       bg="#0a0a12"
+      minH="100dvh"
+      w="100%"
     >
       <MotionBox
         position="absolute"
