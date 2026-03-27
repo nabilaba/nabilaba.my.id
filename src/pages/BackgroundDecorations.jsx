@@ -108,6 +108,7 @@ export default function BackgroundDecorations() {
         width: "100%",
         contain: "strict",
       }}
+      minH="100dvh"
     >
       <GridBackground />
       <AnimatedWavyDashedLine
