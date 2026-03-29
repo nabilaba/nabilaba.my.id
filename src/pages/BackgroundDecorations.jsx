@@ -52,7 +52,6 @@ const GridBackground = () => (
     overflow="hidden"
     transform="perspective(500px) rotateX(60deg)"
     opacity="0.2"
-    style={{ willChange: "transform" }}
   >
     <MotionBox
       position="absolute"
@@ -102,13 +101,9 @@ export default function BackgroundDecorations() {
       pointerEvents="none"
       bg="#0a0a12"
       style={{
-        transform: "translateZ(0)",
-        willChange: "transform",
-        height: "100%",
+        height: "100dvh",
         width: "100%",
-        contain: "strict",
       }}
-      minH="100dvh"
     >
       <GridBackground />
       <AnimatedWavyDashedLine
@@ -131,9 +126,9 @@ export default function BackgroundDecorations() {
           fontWeight="bold"
           color="whiteAlpha.100"
           fontFamily="'Noto Sans JP', sans-serif"
-          style={{ transform: "translateZ(0)" }}
           animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 5, delay: item.delay, repeat: Infinity }}
+          style={{ willChange: "transform" }}
         >
           {item.char}
         </MotionText>
@@ -150,7 +145,6 @@ export default function BackgroundDecorations() {
           borderColor={shape.color}
           boxShadow={`0 0 20px ${shape.color}`}
           borderRadius={shape.type === "donut" ? "full" : "lg"}
-          style={{ transform: "translateZ(0)" }}
           animate={{
             rotate: 360,
             y: [0, 30, 0],
@@ -159,6 +153,7 @@ export default function BackgroundDecorations() {
             rotate: { duration: 10 + i * 2, repeat: Infinity, ease: "linear" },
             y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
           }}
+          style={{ willChange: "transform" }}
           _after={{
             content: '""',
             position: "absolute",
