@@ -70,7 +70,6 @@ const GridBackground = () => (
         repeat: Infinity,
         ease: "linear",
       }}
-      style={{ willChange: "transform" }}
     />
   </Box>
 );
@@ -100,10 +99,9 @@ export default function BackgroundDecorations() {
       overflow="hidden"
       pointerEvents="none"
       bg="#0a0a12"
-      style={{
-        height: "100dvh",
-        width: "100%",
-      }}
+      height="100dvh"
+      width="100%"
+      transform="translateZ(0)"
     >
       <GridBackground />
       <AnimatedWavyDashedLine
@@ -128,7 +126,6 @@ export default function BackgroundDecorations() {
           fontFamily="'Noto Sans JP', sans-serif"
           animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 5, delay: item.delay, repeat: Infinity }}
-          style={{ willChange: "transform" }}
         >
           {item.char}
         </MotionText>
@@ -153,7 +150,6 @@ export default function BackgroundDecorations() {
             rotate: { duration: 10 + i * 2, repeat: Infinity, ease: "linear" },
             y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
           }}
-          style={{ willChange: "transform" }}
           _after={{
             content: '""',
             position: "absolute",
